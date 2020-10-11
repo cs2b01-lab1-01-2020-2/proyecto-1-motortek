@@ -50,7 +50,7 @@ class Mecanico(db.Model):
     apellido = db.Column(db.String(), nullable=False)
     sexo = db.Column(db.String(), nullable=False)
     contacto = db.Column(db.Integer, nullable=False)
-    foto = db.Column(db.String(), nullable=True)
+    foto = db.Column(db.LargeBinary(), nullable=True)
 
 class Descripcion(db.Model):
     __tablename__='descripcion'
