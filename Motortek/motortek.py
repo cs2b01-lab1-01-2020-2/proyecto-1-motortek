@@ -1,11 +1,13 @@
 from flask import *
 from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate
 import psycopg2
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:Quierochocolate9@localhost:5432/motortek'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
+migrate = Migrate(app, db)
 
 class Usuario_cliente(db.Model):
     __tablename__='usuario_cliente'
@@ -59,7 +61,7 @@ class Descripcion(db.Model):
     progreso = db.Column(db.Integer, nullable=False)
 
 
-db.create_all()
+#db.create_all()
 
 @app.route('/')
 def index():
