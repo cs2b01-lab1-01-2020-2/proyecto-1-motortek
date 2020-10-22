@@ -1,11 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Motortek",
-    "\\Motortek\\migrations",
-    "\\Motortek\\migrations\\versions",
-    "\\Motortek\\templates"
+    "\\Motortek"
   ],
-  "SelectedNode": "\\Motortek\\motortek.py",
+  "SelectedNode": "\\Motortek\\migrations",
   "PreviewInSolutionExplorer": false
 }
