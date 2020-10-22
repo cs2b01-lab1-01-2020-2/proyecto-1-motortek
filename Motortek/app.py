@@ -36,7 +36,7 @@ class Usuario_administrador(db.Model):
 
 class Auto(db.Model):
     __tablename__='auto'
-    id_usuario = db.Column(db.Integer, ForeignKey("usuario.id"), nullable=False)
+    id_usuario = db.Column(db.Integer, ForeignKey("usuario_cliente.id"), nullable=False)
     numplaca = db.Column(db.Integer, primary_key=True)
     modelo = db.Column(db.String(), nullable=False)
     foto = db.Column(db.LargeBinary, nullable=True)
