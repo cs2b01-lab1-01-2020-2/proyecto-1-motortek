@@ -7,12 +7,12 @@ from sqlalchemy.ext.declarative import declarative_base
 import psycopg2
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:Quierochocolate9@localhost:5432/motortek'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:password@localhost:5432/motortek'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
-connection = psycopg2.connect('dbname=motortek user=postgres password=Quierochocolate9 host=localhost')
-cursor = connection.cursor()
+#connection = psycopg2.connect('dbname=motortek user=postgres password=Quierochocolate9 host=localhost')
+#cursor = connection.cursor()
 
 class Usuario_cliente(db.Model):
     __tablename__='usuario_cliente'
@@ -69,13 +69,6 @@ class Mecanico(db.Model):
 def index():
     return render_template("index.html")
 
-@app.route('/admin_client', methods=['POST'])
-def admin_client():
-    if(request.form['button1'] == 'Soy Cliente'):
-        return redirect(url_for('login'))
-    else:
-        return redirect(url_for('login_admin'))
-
 @app.route('/login', methods=['GET'])
 def login():
     return render_template("login.html")
@@ -124,38 +117,27 @@ def proceso_register_admin():
     return redirect(url_for('login_admin'))
 
 @app.route('/client', methods=['POST'])
-def proceso_login():
-    correo = request.form['email']
-    password = request.form['password']
+def client_sign():
+    correo = request.form.get('username')
+    contrasena = request.form.get('password')
+    data = Usuario_cliente.query.filter(Usuario_cliente.email==correo, Usuario_cliente.password==contrasena).first()
 
-    usuario = Usuario_cliente.query.filter_by(email=correo).first()
-    
-    if(usuario is None):
-        return redirect(url_for('login'))
-    else:
-        if(usuario.password == password):
-
-
-
-            return render_template("client.html")
-        else:
-            return redirect(url_for('login'))
+    if data:
+        return redirect(url_for('plataform'))
+    else: 
+        return render_template('login.html', data=True)
     
 
 @app.route('/admin', methods=['POST'])
 def proceso_login_admin():
-    correo = request.form['email']
-    password = request.form['password']
+    correo = request.form.get('username')
+    contrasena = request.form.get('password')
+    data = Usuario_administrador.query.filter(Usuario_administrador.email==correo, Usuario_administrador.password==contrasena).first()
 
-    usuario = Usuario_administrador.query.filter_by(email=correo).first()
-    
-    if(usuario is None):
-        return redirect(url_for('login'))
-    else:
-        if(usuario.password == password):
-            return render_template("admin.html")
-        else:
-            return redirect(url_for('login_admin'))
+    if data:
+        return redirect(url_for('plataform'))
+    else: 
+        return render_template('login.html', data=True)
 
 @app.route('/register_auto', methods=['POST'])
 def register_auto():
@@ -178,6 +160,11 @@ def register_servicio():
 @app.route('/register_mecanico', methods=['POST'])
 def register_mecanico():
     return 
+
+@app.route('/plataform', methods=['GET'])
+def plataform():
+    return render_template("plataform.html")
+
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)

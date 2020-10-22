@@ -1,20 +1,48 @@
 <!DOCTYPE html>
-<html lang="es" dir="ltr">
-<head>
-<meta charset="utf-8">
-<title> Motortek </title>
-</head>
-<body>
-    <form action="/client" method="post" name="boton">
-        <label>Ingrese su correo electronico:</label>
-        <input type="email" placeholder="Correo electronico" name="email"><br>
-        <label>Ingrese su contraseña:</label>
-        <input type="password" placeholder="Contraseña" name="password"><br>
-        <input type="submit" id="submit" value="Continuar">
-    </form>
-    <form action="/register" method="post" name="boton">
-        <input type="submit" value="Registrarse" name="button1"><br>
-    </form>
-</body>
-
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>MotorTek</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+        <link rel=StyleSheet href="{{ url_for('static',filename='css.css') }}" type="text/css" media=screen>
+    </head>
+    <header>
+        <nav><img id="logo" src="{{url_for('static', filename='images/Motortek_logo_1.png')}}" width="350">
+          <ul>
+            <li><a href="/">Inicio</a></li>
+            <li><a href="/login_cliente">Cliente</a></li>
+            <li><a href="/admin">Admin</a></li>
+            <li><a href="#">Quienes Somos</a></li>
+            <li><a href="#">Contacto</a></li>
+          </ul>
+        </nav>
+    </header>
+    
+    <body  background="{{url_for('static', filename='images/garage-background.jpg')}}" style="text-align: center;">
+        <section id="contenido">
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <h1>Bienvenido a Motortek</h1>
+            <br>
+            <br>
+            <br>
+            <form action="/client" method="POST">
+                <div><label>Ingresa tu usuario:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><input name="username" type="email" ></div>
+                <br>
+                <div><label>Ingresa tu contrase&ntilde;a: &nbsp;&nbsp;</label><input name="password" type="text" ><br></div>
+                <br>
+                <input class="btn btn-success" id="load" type="submit" value="Acceder"/>
+            </form>
+            <br>
+            {% if data %}
+                <label id="error" style="color: red;"> Usuario y/o contrase&ntilde;a incorrecta</label>
+            {% endif %}
+        </section>
+    </body>
 </html>

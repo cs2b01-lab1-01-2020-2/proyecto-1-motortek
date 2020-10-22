@@ -1,14 +1,24 @@
 <!DOCTYPE html>
-<html lang="es" dir="ltr">
-<head>
-<meta charset="utf-8">
-<title> Motortek </title>
-</head>
-<body>
-    <form action="/admin_client" method="post" name="boton">
-        <input type="submit" value="Soy Cliente" name="button1"><br>
-        <input type="submit" value="Soy Administrador" name="button1"><br>
-    </form>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>MotorTek</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel=StyleSheet href="{{ url_for('static',filename='css.css') }}" type="text/css" media=screen>
+  </head>
+  <header>
+    <nav><img id="logo" src="{{url_for('static', filename='images/Motortek_logo_1.png')}}" width="350">
+      <ul>
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/login">Cliente</a></li>
+        <li><a href="/login_admin">Admin</a></li>
+        <li><a href="#">Quienes Somos</a></li>
+        <li><a href="#">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+  <body background="{{url_for('static', filename='images/garage-background.jpg')}}" style="text-align: center;">
+        
 </body>
 
 </html>
