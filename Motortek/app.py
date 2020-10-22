@@ -7,11 +7,11 @@ from sqlalchemy.ext.declarative import declarative_base
 import psycopg2
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:Quierochocolate9@localhost:5432/motortek'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:1214161820@localhost:5432/motortek'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
-connection = psycopg2.connect('dbname=motortek user=postgres password=Quierochocolate9 host=localhost')
+connection = psycopg2.connect('dbname=motortek user=postgres password=1214161820 host=localhost')
 cursor = connection.cursor()
 
 class Usuario_cliente(db.Model):
@@ -36,7 +36,7 @@ class Usuario_administrador(db.Model):
 
 class Auto(db.Model):
     __tablename__='auto'
-    id_usuario = db.Column(db.Integer, ForeignKey("usuario_cliente.id"), nullable=False)
+    id_usuario = db.Column(db.Integer, ForeignKey("usuario.id"), nullable=False)
     numplaca = db.Column(db.Integer, primary_key=True)
     modelo = db.Column(db.String(), nullable=False)
     foto = db.Column(db.LargeBinary, nullable=True)
@@ -47,7 +47,6 @@ class Servicio(db.Model):
     tipo = db.Column(db.String(), nullable=False)
     costo = db.Column(db.Integer, nullable=False)
     descripcion = db.Column(db.String(300), nullable=False)
-    descripcion = db.Column(db.Integer, nullable=False)
     fecha_ingreso = db.Column(db.Date, nullable=False)
     fecha_entrega = db.Column(db.Date, nullable=False)
     numplaca = db.Column(db.Integer, ForeignKey("auto.numplaca"), nullable=False)
@@ -68,7 +67,7 @@ db.create_all()
 
 @app.route('/')
 def index():
-    return render_template("index.html")
+    return render_template('index.html')
 
 @app.route('/admin_client', methods=['POST'])
 def admin_client():
@@ -119,51 +118,43 @@ def proceso_register_admin():
     correo = request.args.get("email")
     password = request.args.get("password")
 
-    u = Usuario_administrador(nombre = nombre, apellido= apellido, sexo=sexo, contacto=contacto, email=correo, password=password)
+    u = Usuario_administrador(nombre=nombre, apellido= apellido, sexo=sexo, contacto=contacto, email=correo, password=password)
     db.session.add(u)
     db.session.commit()
     return redirect(url_for('login_admin'))
 
-@app.route('/proceso_login', methods=['GET'])
+@app.route('/client', methods=['POST'])
 def proceso_login():
-    correo = request.args.get("email")
-    password = request.args.get("password")
+    correo = request.form['email']
+    password = request.form['password']
 
     usuario = Usuario_cliente.query.filter_by(email=correo).first()
     
-    if(usuario.email is None):
+    if(usuario is None):
         return redirect(url_for('login'))
     else:
         if(usuario.password == password):
-            return redirect(url_for('client'))
+            return render_template("client.html")
         else:
             return redirect(url_for('login'))
-
-
     
 
-@app.route('/proceso_login_admin', methods=['GET'])
+@app.route('/admin', methods=['POST'])
 def proceso_login_admin():
-    correo = request.args.get("email")
-    password = request.args.get("password")
+    correo = request.form['email']
+    password = request.form['password']
 
     usuario = Usuario_administrador.query.filter_by(email=correo).first()
     
-    if(usuario.email is None):
+    if(usuario is None):
         return redirect(url_for('login'))
     else:
         if(usuario.password == password):
-            return redirect(url_for('admin'))
+            return render_template("admin.html")
         else:
             return redirect(url_for('login_admin'))
 
-@app.route('/client')
-def client():
-    return render_template("client.html")
 
-@app.route('/admin')
-def admin():
-    return render_template("admin.html")
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)

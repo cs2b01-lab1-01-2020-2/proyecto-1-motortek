@@ -1,29 +1,20 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>MotorTek</title>
-        <style>
-        </style>
-    </head>
+<html lang="es" dir="ltr">
+<head>
+<meta charset="utf-8">
+<title> Motortek </title>
+</head>
+<body>
+    <form action="/admin" method="post" name="boton">
+        <label>Ingrese su correo electronico:</label>
+        <input type="email" placeholder="Correo electronico" name="email"><br>
+        <label>Ingrese su contraseña:</label>
+        <input type="password" placeholder="Contraseña" name="password"><br>
+        <input type="submit" id="submit" value="Continuar">
+    </form>
+    <form action="/register_admin" method="post" name="boton">
+        <input type="submit" value="Registrarse" name="button1"><br>
+    </form>
+</body>
 
-    <body>
-        <h1>Bienvenido a Motortek</h1>
-        <h4>Hola admin</h4>
-        <form id= "Login">
-            <div><label>Ingresa tu usuario: </label><input id="username" type="email"></div>
-            <br>
-            <div><label>Ingresa tu contrase&ntilde;a: </label><input id="password" type="text"><br></div>
-            <br>
-            <input id="load" type="submit" value="Acceder">
-        </form>
-    </body>
-
-    <script>
-        //document.getElementById('Login').onsubmit() = function(e)
-        //{
-        //    fetch()
-        //}
-    </script>
-    
 </html>

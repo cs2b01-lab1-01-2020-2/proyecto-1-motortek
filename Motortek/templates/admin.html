@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+<meta charset="utf-8">
+<title> Motortek </title>
+</head>
+<body>
+    Registrar Autos:
+    <form action="/register_auto" method="post" name="">
+        <label>Ingrese el numero de placa del auto:</label>
+        <input type="text" placeholder="Placa del auto" name="placa"><br>
+        <label>Ingrese el modelo del auto:</label>
+        <input type="text" placeholder="Modelo del auto" name="modelo"><br>
+        <label>Ingrese una foto del auto:</label>
+        <input type="image" placeholder="Imagen" name="imagen"><br>
+        <input type="submit" id="submit" value="Registrar">
+    </form>
+    Registrar Servicios:
+    <form action="/register_servicio" method="post" name="boton">
+        <label>Ingrese el tipo de servicio:</label>
+        <input type="text" placeholder="Placa del auto" name="placa"><br>
+        <label>Ingrese el costo del servicio:</label>
+        <input type="number" placeholder="Modelo del auto" name="modelo"><br>
+        <label>Ingrese la descripcion del servicio:</label>
+        <input type="text" placeholder="Descripcion de servicio" name="descripcion"><br>
+        <label>Ingrese la fecha de ingreso:</label>
+        <input type="datetime" placeholder="Fecha de ingreso" name="fecha_i"><br>
+        <label>Ingrese la fecha de entrega:</label>
+        <input type="datetime" placeholder="Fecha de entrega" name="fecha_e"><br>
+        <label>Ingrese el numero de placa del auto:</label>
+        <input type="text" placeholder="Placa del auto" name="placa"><br>
+        <input type="submit" id="submit" value="Registrar">
+    </form>
+    Registrar Mecanicos:
+    <form action="/register_mecanico" method="post" name="boton">
+        <input type="submit" value="Registrarse" name="button1"><br>
+    </form>
+</body>
+
+</html>

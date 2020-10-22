@@ -1,16 +1,28 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>MotorTek</title>
-        <style>
-        </style>
-    </head>
+<html lang="es" dir="ltr">
+<head>
+<meta charset="utf-8">
+<title> Motortek </title>
+<style>
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+    <form action="/admin_client" method="post" name="boton">
+        <input type="submit" class="button" value="Soy Cliente" name="button1">
+        <input type="submit" class="button" value="Soy Administrador" name="button1"><br>
+    </form>
+</body>
 
-    <body>
-        <h1>Bienvenido a Motortek</h1>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
-        <a href="/login" class="btn btn-success">Soy un cliente</a>
-        <a href="/login_admin" class="btn btn-success">Soy un administrador</a>
-    </body>
 </html>

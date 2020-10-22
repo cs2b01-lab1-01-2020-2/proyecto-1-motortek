@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Motortek"
+    "\\Motortek",
+    "\\Motortek\\templates"
   ],
-  "SelectedNode": "\\Motortek\\app.py",
+  "SelectedNode": "\\Motortek\\templates\\login_admin.html",
   "PreviewInSolutionExplorer": false
 }
