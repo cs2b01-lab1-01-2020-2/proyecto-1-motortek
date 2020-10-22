@@ -44,17 +44,15 @@ Mediante este código se controla la entrada al sistema ya que se limita a los u
 
 ```python 
 @app.route('/client', methods=['POST'])
-def proceso_login():
-    correo = request.form['email']
-    password = request.form['password']
-    usuario = Usuario_cliente.query.filter_by(email=correo).first() 
-    if(usuario is None):
-        return redirect(url_for('login'))
-    else:
-        if(usuario.password == password):
-            return render_template("client.html")
-        else:
-            return redirect(url_for('login'))          
+def client_sign():
+    correo = request.form.get('username')
+    contrasena = request.form.get('password')
+    data = Usuario_cliente.query.filter(Usuario_cliente.email==correo, Usuario_cliente.password==contrasena).first()
+
+    if data:
+        return redirect(url_for('plataform'))
+    else: 
+        return render_template('login.html', data=True)          
 ```
 ### Administradores
 Mediante este código se controla la entrada al sistema como administrador. Los usuarios de tipo administrador solo pueden ser ingresados al sistema por otros administradores.
@@ -62,18 +60,14 @@ Mediante este código se controla la entrada al sistema como administrador. Los 
 ```python 
 @app.route('/admin', methods=['POST'])
 def proceso_login_admin():
-    correo = request.form['email']
-    password = request.form['password']
+    correo = request.form.get('username')
+    contrasena = request.form.get('password')
+    data = Usuario_administrador.query.filter(Usuario_administrador.email==correo, Usuario_administrador.password==contrasena).first()
 
-    usuario = Usuario_administrador.query.filter_by(email=correo).first()
-    
-    if(usuario is None):
-        return redirect(url_for('login'))
-    else:
-        if(usuario.password == password):
-            return render_template("admin.html")
-        else:
-            return redirect(url_for('login_admin'))          
+    if data:
+        return redirect(url_for('plataform'))
+    else: 
+        return render_template('login.html', data=True)         
 ```
 ## Manejo de Errores:
 
