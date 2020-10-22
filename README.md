@@ -26,6 +26,53 @@ Se escoge esta solución ya que permitirá al taller poder brindar información 
 - Diseñar e implementar dentro del proyecto una base de datos relacional.
 - Añadir una interfaz para facilitar la interacción con el sistema.
 
+## Tecnologías Involucradas 
+
+
+## Script para crear la base de Datos:
+`python dbcreate.py`
+
+## Información sobre los API. Request
+
+## Hosts
+Tanto el front-end y back-end del proyecto son soportados en un Host local.
+
+## Forma de Autenticación
+Se necesita velar por la autenticidad de los usuarios que ingresan al sistema:
+## Usuarios
+Mediante este código se controla la entrada al sistema ya que se limita a los usuarios que han sido registrados.
+
+```python @app.route('/client', methods=['POST'])
+def proceso_login():
+    correo = request.form['email']
+    password = request.form['password']
+    usuario = Usuario_cliente.query.filter_by(email=correo).first() 
+    if(usuario is None):
+        return redirect(url_for('login'))
+    else:
+        if(usuario.password == password):
+            return render_template("client.html")
+        else:
+            return redirect(url_for('login'))          
+```
+## Administradores
+Mediante este código se controla la entrada al sistema como administrador. Los usuarios de tipo administrador solo pueden ser ingresados al sistema por otros administradores.
+
+```python @app.route('/admin', methods=['POST'])
+def proceso_login_admin():
+    correo = request.form['email']
+    password = request.form['password']
+
+    usuario = Usuario_administrador.query.filter_by(email=correo).first()
+    
+    if(usuario is None):
+        return redirect(url_for('login'))
+    else:
+        if(usuario.password == password):
+            return render_template("admin.html")
+        else:
+            return redirect(url_for('login_admin'))          
+```
 
 
 
