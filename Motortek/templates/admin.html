@@ -4,37 +4,54 @@
 <meta charset="utf-8">
 <title> Motortek </title>
 </head>
-<body>
+<body><br>
     Registrar Autos:
     <form action="/register_auto" method="post" name="">
         <label>Ingrese el numero de placa del auto:</label>
         <input type="text" placeholder="Placa del auto" name="placa"><br>
         <label>Ingrese el modelo del auto:</label>
         <input type="text" placeholder="Modelo del auto" name="modelo"><br>
+        <label>Ingrese el correo electronico del cliente:</label>
+        <input type="email" placeholder="Correo electronico del cliente" name="correo"><br>
         <label>Ingrese una foto del auto:</label>
         <input type="image" placeholder="Imagen" name="imagen"><br>
         <input type="submit" id="submit" value="Registrar">
-    </form>
+    </form><br>
+    Registrar Mecanicos:
+    <form action="/register_mecanico" method="post" name="">
+        <label>Ingrese el dni del mecanico:</label>
+        <input type="number" placeholder="Dni del mecanico" name="dni"><br>
+        <label>Ingrese el nombre del mecanico:</label>
+        <input type="text" placeholder="Nombre del mecanico" name="nombre"><br>
+        <label>Ingrese el apellido del mecanico:</label>
+        <input type="text" placeholder="Apellido del mecanico" name="apellido"><br>
+        <label>Ingrese el sexo del mecanico:</label>
+        <input type="text" placeholder="Sexo del mecanico" name="sexo"><br>
+        <label>Ingrese el telefono celular del mecanico:</label>
+        <input type="number" placeholder="Telefono celular del mecanico" name="contacto"><br>
+        <label>Ingrese una foto del mecanico:</label>
+        <input type="image" placeholder="Imagen del mecanico" name="imagen"><br>
+        <input type="submit" id="submit" value="Registrar">
+    </form><br>
     Registrar Servicios:
-    <form action="/register_servicio" method="post" name="boton">
+    <form action="/register_servicio" method="post" name="">
         <label>Ingrese el tipo de servicio:</label>
-        <input type="text" placeholder="Placa del auto" name="placa"><br>
+        <input type="text" placeholder="Tipo de servicio" name="sevicio"><br>
         <label>Ingrese el costo del servicio:</label>
-        <input type="number" placeholder="Modelo del auto" name="modelo"><br>
+        <input type="number" placeholder="Costo del servicio" name="costo"><br>
         <label>Ingrese la descripcion del servicio:</label>
         <input type="text" placeholder="Descripcion de servicio" name="descripcion"><br>
         <label>Ingrese la fecha de ingreso:</label>
         <input type="datetime" placeholder="Fecha de ingreso" name="fecha_i"><br>
         <label>Ingrese la fecha de entrega:</label>
         <input type="datetime" placeholder="Fecha de entrega" name="fecha_e"><br>
+        <label>Ingrese el numero de dni del mecanico:</label>
+        <input type="number" placeholder="Dni del mecanico" name="dni"><br>
         <label>Ingrese el numero de placa del auto:</label>
         <input type="text" placeholder="Placa del auto" name="placa"><br>
         <input type="submit" id="submit" value="Registrar">
     </form>
-    Registrar Mecanicos:
-    <form action="/register_mecanico" method="post" name="boton">
-        <input type="submit" value="Registrarse" name="button1"><br>
-    </form>
+    
 </body>
 
 </html>
