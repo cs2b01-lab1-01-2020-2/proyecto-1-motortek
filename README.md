@@ -1,37 +1,35 @@
-# proyecto_1
-Desarrollo web - frontend -backend
+# Desarrollo Basado en Plataformas Secci贸n 2.02 - Proyecto 1
+## Nombre del Proyecto: Motortek
 
-Motortek
-
-Integrantes: 
+## Integrantes: 
 - Juan Pablo Miguel Lozada Velasco
 - Claudio Alejandro Echarre Lopez
 - Jorge Harlop Flores Berrio
 - Jose Miguel Sanchez Atahualpa
 
 Descripcion:
-Motortek es la aplicacion del taller de autos del mismo nombre, en este se podra ver los horarios de atenci髇, los 
-servicios disponibles y la informaci髇 de los mecanicos. Del mismo modo, se podra registrar el usuario para agendar 
+Motortek es la aplicacion del taller de autos del mismo nombre, en este se podra ver los horarios de atenci贸n, los 
+servicios disponibles y la informaci贸n de los mecanicos. Del mismo modo, se podra registrar el usuario para agendar 
 un servicio para su auto.
 
-Objetivos principales / Misi髇 / Visi髇:
+Objetivos principales / Misi贸n / Visi贸n:
 
-Informaci髇 acerca de las tecnolog韆s utilizadas en Front-end, Back-end y Base de datos:
+Informaci贸n acerca de las tecnolog铆as utilizadas en Front-end, Back-end y Base de datos:
 Front-end: HTML
 Back-end: flask, SQLAlchemy, flask db migration, render_template, request, redirect, url_for, jsonify
 Base de datos: Postgresql, 
 
 El nombre del script a ejecutar para iniciar la base de datos con datos:
 
-Informaci髇 acerca de los API. Requests y respuestas de cada endpoint utilizado en el sistema:
+Informaci贸n acerca de los API. Requests y respuestas de cada endpoint utilizado en el sistema:
 
 Hosts:
 localhost
 
-Forma de Autenticaci髇:
+Forma de Autenticaci贸n:
 
 Manejo de errores HTTP: 500, 400, 300, 200, 100, etc:
 
-C髆o ejecutar el sistema (Deployment scripts):
+C贸mo ejecutar el sistema (Deployment scripts):
 
 
