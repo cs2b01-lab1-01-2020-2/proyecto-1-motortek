@@ -30,7 +30,7 @@ Se escoge esta solución ya que permitirá al taller poder brindar información 
 
 
 ## Script para crear la base de Datos:
-`python dbcreate.py`
+`python script.py`
 
 ## Información sobre los API. Request
 
@@ -79,7 +79,7 @@ def proceso_login_admin():
 
 
 ## Cómo ejecutar el sistema:
-En la primera vez que se ejecuta el sistema es necesario ejecutar el script para la creación de la base de datos: `python dbcreate.py`
+En la primera vez que se ejecuta el sistema es necesario ejecutar el script para la creación de la base de datos: `python script.py`
 Luego, para iniciar el sistema: `python app.py`
 
 
