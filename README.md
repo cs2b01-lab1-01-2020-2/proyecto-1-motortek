@@ -39,10 +39,11 @@ Tanto el front-end y back-end del proyecto son soportados en un Host local.
 
 ## Forma de Autenticación
 Se necesita velar por la autenticidad de los usuarios que ingresan al sistema:
-## Usuarios
+### Usuarios
 Mediante este código se controla la entrada al sistema ya que se limita a los usuarios que han sido registrados.
 
-```python @app.route('/client', methods=['POST'])
+```python 
+@app.route('/client', methods=['POST'])
 def proceso_login():
     correo = request.form['email']
     password = request.form['password']
@@ -55,10 +56,11 @@ def proceso_login():
         else:
             return redirect(url_for('login'))          
 ```
-## Administradores
+### Administradores
 Mediante este código se controla la entrada al sistema como administrador. Los usuarios de tipo administrador solo pueden ser ingresados al sistema por otros administradores.
 
-```python @app.route('/admin', methods=['POST'])
+```python 
+@app.route('/admin', methods=['POST'])
 def proceso_login_admin():
     correo = request.form['email']
     password = request.form['password']
@@ -73,14 +75,12 @@ def proceso_login_admin():
         else:
             return redirect(url_for('login_admin'))          
 ```
+## Manejo de Errores:
 
 
-
-
-
-
-
-
+## Cómo ejecutar el sistema:
+En la primera vez que se ejecuta el sistema es necesario ejecutar el script para la creación de la base de datos: `python dbcreate.py`
+Luego, para iniciar el sistema: `python app.py`
 
 
 
@@ -89,17 +89,8 @@ Front-end: HTML
 Back-end: flask, SQLAlchemy, flask db migration, render_template, request, redirect, url_for, jsonify
 Base de datos: Postgresql, 
 
-El nombre del script a ejecutar para iniciar la base de datos con datos:
 
-Información acerca de los API. Requests y respuestas de cada endpoint utilizado en el sistema:
 
-Hosts:
-localhost
 
-Forma de Autenticación:
-
-Manejo de errores HTTP: 500, 400, 300, 200, 100, etc:
-
-Cómo ejecutar el sistema (Deployment scripts):
 
 
