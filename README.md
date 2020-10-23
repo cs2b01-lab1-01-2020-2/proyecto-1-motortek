@@ -29,27 +29,27 @@ Se escoge esta solución ya que permitirá al taller poder brindar información 
 ## Tecnologías Involucradas 
 ### Front-end: 
 HTML, CSS
-### index.html:
+#### index.html:
 Interfaz Inicial donde te permite a escoger entre las opciones de usuario de administrador.
 
-### login.html
+#### login.html
 Iniciar sesion como cliente dentro del sistema 
 
-### login_admin.html
+#### login_admin.html
 Iniciar sesion como administrador dentro del sistema
 
-### register.html
+#### register.html
 Permite el registro de nuevos usuarios dentro del sistema.
 
-### client.html
+#### client.html
 Interfaz donde el usuario interactua con la información dentro de la base de datos. En otras palabras, permite al usuario ver los datos que necesita.
 
-### admin.html
+#### admin.html
 Interfaz donde los administradores pueden ingresar datos para cada cliente. 
 
 ### Back-end: 
 flask, SQLAlchemy, flask db migration, render_template, request, redirect, url_for, jsonify, Jinja
-### app.py:
+#### app.py:
 Implementación del back-end utilizando el framework de flask y otras tecnologías que permiten que la página web funcione correctamente con una base de datos.
 
 ### Database: 
