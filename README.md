@@ -27,8 +27,33 @@ Se escoge esta solución ya que permitirá al taller poder brindar información 
 - Añadir una interfaz para facilitar la interacción con el sistema.
 
 ## Tecnologías Involucradas 
+### Front-end: 
+HTML, CSS
+### index.html:
+Interfaz Inicial donde te permite a escoger entre las opciones de usuario de administrador.
 
+### login.html
+Iniciar sesion como cliente dentro del sistema 
 
+### login_admin.html
+Iniciar sesion como administrador dentro del sistema
+
+### register.html
+Permite el registro de nuevos usuarios dentro del sistema.
+
+### client.html
+Interfaz donde el usuario interactua con la información dentro de la base de datos. En otras palabras, permite al usuario ver los datos que necesita.
+
+### admin.html
+Interfaz donde los administradores pueden ingresar datos para cada cliente. 
+
+### Back-end: 
+flask, SQLAlchemy, flask db migration, render_template, request, redirect, url_for, jsonify, Jinja
+### app.py:
+Implementación del back-end utilizando el framework de flask y otras tecnologías que permiten que la página web funcione correctamente con una base de datos.
+
+### Database: 
+Se utiliza Postgresql para la base de datos de este proyecto.
 ## Script para crear la base de Datos:
 `python script.py`
 
@@ -55,7 +80,7 @@ def client_sign():
         return render_template('login.html', data=True)          
 ```
 ### Administradores
-Mediante este código se controla la entrada al sistema como administrador. Los usuarios de tipo administrador solo pueden ser ingresados al sistema por otros administradores.
+Mediante este código se controla la entrada al sistema como administrador.
 
 ```python 
 @app.route('/admin', methods=['POST'])
