@@ -5,10 +5,18 @@
 <title> Motortek </title>
 </head>
 <body>
-    Autos registrados en el taller:
-
-    Servicios completados en el taller:
-    
+    <label>Autos registrados en el taller:</label>
+    <ul>
+        {% for a in autos %}
+        <li>{{a}}</li>
+        {% endfor %}
+    </ul>
+    <label>Servicios completados en el taller:</label>
+    <ul>
+        {% for s in servicios %}
+        <li>{{s}}</li>
+        {% endfor %}
+    </ul>
 </body>
 
 </html>
