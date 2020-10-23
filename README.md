@@ -1,4 +1,4 @@
-# Desarrollo Basado en Plataformas Sección 2.02 - Proyecto 1
+# Desarrollo Basado en Plataformas Sección 1.01 - Proyecto 1
 ## Nombre del Proyecto: Motortek
 
 ## Integrantes: 
