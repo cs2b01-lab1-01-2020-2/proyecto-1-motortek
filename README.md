@@ -95,21 +95,131 @@ def proceso_login_admin():
         return render_template('login.html', data=True)         
 ```
 ## Manejo de Errores:
+Los errores son manejados dentro del proyecto de acuerdo a los inputs del usuario. Por ejemplo, para iniciar sesión en el sistema es necesario ingresar un usuario y contraseña válido (almacenado en la base de datos) 
+### Error en Registro de Usuarios:
+Se produce el mensaje de error cuando se intenta registrar un usuario que ya está registrado en el sistema.
+Código:
 
+```python 
+@app.route('/proceso_register', methods=['GET'])
+def proceso_register():
+    
+    try:
+        nombre = request.args.get("nombre")
+        apellido = request.args.get("apellido")
+        sexo = request.args.get("sexo")
+        contacto = request.args.get("contacto")
+        correo = request.args.get("email")
+        password = request.args.get("password")
+        error=False
+        u = Usuario_cliente(nombre = nombre, apellido= apellido, sexo=sexo, contacto=contacto, email=correo, password=password)
+        db.session.add(u)
+        db.session.commit()
+        return redirect(url_for('login'))
+    except:
+        db.session.rollback()
+        error=True
+        return render_template('register.html', error=error)         
+```
+### Error en Registro de Administradores:
+Se produce el mensaje de error cuando se intenta registrar un administrador que ya está registrado en el sistema.
+Código:
 
+```python 
+@app.route('/proceso_register_admin', methods=['GET'])
+def proceso_register_admin():
+    try:
+        nombre = request.args.get("nombre")
+        apellido = request.args.get("apellido")
+        sexo = request.args.get("sexo")
+        contacto = request.args.get("contacto")
+        correo = request.args.get("email")
+        password = request.args.get("password")
+        error=False
+        u = Usuario_administrador(nombre=nombre, apellido= apellido, sexo=sexo, contacto=contacto, email=correo, password=password)
+        db.session.add(u)
+        db.session.commit()
+        return redirect(url_for('login_admin'))
+    except:
+        db.session.rollback()
+        error = True
+        return render_template('register_admin.html', error=error)         
+```
+### Error en Registro de Información de Autos:
+Se produce cuando el administrador provoca un error dentro de la base de datos al intentar ingresar los datos de un Auto.
+Código:
+
+```python 
+@app.route('/register_auto', methods=['GET'])
+def register_auto():
+    
+    try:
+        placa = request.args.get("placa")
+        modelo = request.args.get("modelo")
+        correo = request.args.get("correo")
+        placa = int(placa)
+        error=False
+        a = Auto(email_usuario=correo, numplaca=placa, modelo=modelo)
+        db.session.add(a)
+        db.session.commit()
+    except:
+        db.session.rollback()
+        error = True
+    finally:
+        return render_template("admin.html", error=error)        
+```
+### Error en Registro de Información del Servicio:
+Se produce cuando el administrador provoca un error dentro de la base de datos al intentar ingresar los datos de un Servicio.
+Código:
+
+```python 
+@app.route('/register_servicio', methods=['GET'])
+def register_servicio():
+    
+    try:
+        tipo = request.args.get("servicio")
+        costo = request.args.get("costo")
+        descripcion = request.args.get("descripcion")
+        fecha_in= request.args.get("fecha_i")
+        fecha_out=request.args.get("fecha_e")
+        dni=request.args.get("dni")
+        placa=request.args.get("placa")
+        costo=int(costo)
+        dni= int(dni)
+        placa = int(placa)
+        error=False
+        s = Servicio(tipo=tipo, costo=costo, descripcion=descripcion, fecha_ingreso=fecha_in, fecha_entrega=fecha_out, numplaca=placa, mecanico=dni)
+        db.session.add(s)
+        db.session.commit()
+    except:
+        db.session.rollback()
+        error = True
+    finally:
+        return render_template("admin.html", error=error)       
+```
+### Error en Registro de Datos del Mecánico:
+Se produce cuando el administrador provoca un error dentro de la base de datos al intentar ingresar los datos de un Mecánico.
+Código:
+
+```python 
+@app.route('/register_mecanico', methods=['GET'])
+def register_mecanico():
+    try:
+        dni = request.args.get("dni")
+        nombre = request.args.get("nombre")
+        apellido = request.args.get("apellido")
+        sexo = request.args.get("sexo")
+        telefono = request.args.get("contacto")
+        error=False
+        m = Mecanico(dni=dni, nombre=nombre, apellido=apellido, sexo=sexo, contacto=telefono)
+        db.session.add(m)
+        db.session.commit()
+    except:
+        db.session.rollback()
+        error = True
+    finally:
+        return render_template("admin.html", error=error)       
+```
 ## Cómo ejecutar el sistema:
 En la primera vez que se ejecuta el sistema es necesario ejecutar el script para la creación de la base de datos: `python script.py`
 Luego, para iniciar el sistema: `python app.py`
-
-
-
-Información acerca de las tecnologías utilizadas en Front-end, Back-end y Base de datos:
-Front-end: HTML
-Back-end: flask, SQLAlchemy, flask db migration, render_template, request, redirect, url_for, jsonify
-Base de datos: Postgresql, 
-
-
-
-
-
-
