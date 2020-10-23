@@ -58,7 +58,7 @@ Se utiliza Postgresql para la base de datos de este proyecto.
 `python script.py`
 
 ## Información sobre los API. Request
-
+Se utilizan varios @app.route que reciben y retornan información.
 ## Hosts
 Tanto el front-end y back-end del proyecto son soportados en un Host local.
 
