@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+<meta charset="utf-8">
+<title> Motortek </title>
+</head>
+<body>
+    <label>Autos registrados en el taller:</label>
+    <ul style="list-style-type:none">
+        {% for a in autos %}
+        <li>Numero de placa: {{a.numplaca}}</li>
+        <li>Modelo de auto: {{a.modelo}}</li>
+        <br>
+        {% endfor %}
+    </ul>
+    <label>Servicios completados en el taller:</label>
+    <ul style="list-style-type:none">
+        {% for s in servicios %}
+        <li>Tipo de servicio: {{s.tipo}}</li>
+        <li>Descripcion de servicio: {{s.descripcion}}</li>
+        <li>Costo del servicio: {{s.costo}}</li>
+        <li>Numero de placa del auto:{{s.numplaca}}</li>
+        <br>
+        {% endfor %}
+    </ul>
+</body>
+
+</html>
