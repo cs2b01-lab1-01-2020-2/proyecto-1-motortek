@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">proyecto</string>
+    <string name="motortek">Motortek</string>
+    <string name="menu">Menu</string>
 </resources>
