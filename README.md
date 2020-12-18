@@ -223,3 +223,7 @@ def register_mecanico():
 ## Cómo ejecutar el sistema:
 En la primera vez que se ejecuta el sistema es necesario ejecutar el script para la creación de la base de datos: `python script.py`
 Luego, para iniciar el sistema: `python app.py`
+
+## El aplicativo Motortek:
+## Definición del Problema:
+La empresa Motortek desea también una forma práctica para sus clientes de acceder a estos nuevos servicios digitales. Es así, que se propone la creación de un aplicativo Android.
