@@ -6,21 +6,15 @@
 </head>
 <body>
     <label>Autos registrados en el taller:</label>
-    <ul style="list-style-type:none">
+    <ul>
         {% for a in autos %}
-        <li>Numero de placa: {{a.numplaca}}</li>
-        <li>Modelo de auto: {{a.modelo}}</li>
-        <br>
+        <li>{{a}}</li>
         {% endfor %}
     </ul>
     <label>Servicios completados en el taller:</label>
-    <ul style="list-style-type:none">
+    <ul>
         {% for s in servicios %}
-        <li>Tipo de servicio: {{s.tipo}}</li>
-        <li>Descripcion de servicio: {{s.descripcion}}</li>
-        <li>Costo del servicio: {{s.costo}}</li>
-        <li>Numero de placa del auto:{{s.numplaca}}</li>
-        <br>
+        <li>{{s}}</li>
         {% endfor %}
     </ul>
 </body>

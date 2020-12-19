@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Motortek",
+    "\\Motortek\\templates"
   ],
+  "SelectedNode": "\\Motortek\\templates\\login.html",
   "PreviewInSolutionExplorer": false
 }

@@ -64,7 +64,7 @@ class Mecanico(db.Model):
 
 
 
-db.create_all()
+#db.create_all()
 
 @app.route('/')
 def index():
