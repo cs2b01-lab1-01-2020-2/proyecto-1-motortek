@@ -13,7 +13,9 @@ public class Autos extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_autos);
+
         Toast.makeText(this, "Bienvenido", Toast.LENGTH_LONG).show();
+
     }
 
     public void back (View view){
@@ -22,6 +24,9 @@ public class Autos extends AppCompatActivity {
     }
 
     public void servicios (View view){
+
+
+
         Intent servicios = new Intent(this, Servicios.class);
         startActivity(servicios);
     }

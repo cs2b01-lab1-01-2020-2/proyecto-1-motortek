@@ -9,12 +9,26 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Motortek">
-        <activity android:name=".Detalles" android:label="Detalles"></activity>
-        <activity android:name=".Servicios" android:label="Servicios"/>
-        <activity android:name=".Autos" android:label="Autos"/>
-        <activity android:name=".Register" android:label="Register"/>
-        <activity android:name=".Log_in" android:label="Log in"/>
-        <activity android:name=".MainActivity" android:label="Motortek">
+        <activity android:name=".InsertServicio"></activity>
+        <activity android:name=".InsertAuto" />
+        <activity
+            android:name=".Detalles"
+            android:label="Detalles" />
+        <activity
+            android:name=".Servicios"
+            android:label="Servicios" />
+        <activity
+            android:name=".Autos"
+            android:label="Autos" />
+        <activity
+            android:name=".Register"
+            android:label="Register" />
+        <activity
+            android:name=".Log_in"
+            android:label="Log in" />
+        <activity
+            android:name=".MainActivity"
+            android:label="Motortek">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

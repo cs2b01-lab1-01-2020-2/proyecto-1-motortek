@@ -1,0 +1,87 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.utec.dbp10.motortek"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="23"
+8-->C:\Users\Wese\Downloads\Motortek_Proyecto\proyecto-1-motortek-main\Motortek\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="30" />
+9-->C:\Users\Wese\Downloads\Motortek_Proyecto\proyecto-1-motortek-main\Motortek\app\src\main\AndroidManifest.xml
+10
+11    <application
+11-->C:\Users\Wese\Downloads\Motortek_Proyecto\proyecto-1-motortek-main\Motortek\app\src\main\AndroidManifest.xml:5:5-38:19
+12        android:allowBackup="true"
+12-->C:\Users\Wese\Downloads\Motortek_Proyecto\proyecto-1-motortek-main\Motortek\app\src\main\AndroidManifest.xml:6:9-35
+13        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+13-->[androidx.core:core:1.3.1] C:\Users\Wese\.gradle\caches\transforms-2\files-2.1\c560b8721f05ca12656603dd382025ab\core-1.3.1\AndroidManifest.xml:24:18-86
+14        android:debuggable="true"
+15        android:extractNativeLibs="false"
+16        android:icon="@mipmap/ic_launcher"
+16-->C:\Users\Wese\Downloads\Motortek_Proyecto\proyecto-1-motortek-main\Motortek\app\src\main\AndroidManifest.xml:7:9-43
+17        android:label="@string/app_name"
+17-->C:\Users\Wese\Downloads\Motortek_Proyecto\proyecto-1-motortek-main\Motortek\app\src\main\AndroidManifest.xml:8:9-41
+18        android:roundIcon="@mipmap/ic_launcher_round"
+18-->C:\Users\Wese\Downloads\Motortek_Proyecto\proyecto-1-motortek-main\Motortek\app\src\main\AndroidManifest.xml:9:9-54
+19        android:supportsRtl="true"
+19-->C:\Users\Wese\Downloads\Motortek_Proyecto\proyecto-1-motortek-main\Motortek\app\src\main\AndroidManifest.xml:10:9-35
+20        android:testOnly="true"
+21        android:theme="@style/Theme.Motortek" >
+21-->C:\Users\Wese\Downloads\Motortek_Proyecto\proyecto-1-motortek-main\Motortek\app\src\main\AndroidManifest.xml:11:9-46
+22        <activity android:name="com.utec.dbp10.motortek.InsertServicio" />
+22-->C:\Users\Wese\Downloads\Motortek_Proyecto\proyecto-1-motortek-main\Motortek\app\src\main\AndroidManifest.xml:12:9-61
+22-->C:\Users\Wese\Downloads\Motortek_Proyecto\proyecto-1-motortek-main\Motortek\app\src\main\AndroidManifest.xml:12:19-49
+23        <activity android:name="com.utec.dbp10.motortek.InsertAuto" />
+23-->C:\Users\Wese\Downloads\Motortek_Proyecto\proyecto-1-motortek-main\Motortek\app\src\main\AndroidManifest.xml:13:9-48
+23-->C:\Users\Wese\Downloads\Motortek_Proyecto\proyecto-1-motortek-main\Motortek\app\src\main\AndroidManifest.xml:13:19-45
+24        <activity
+24-->C:\Users\Wese\Downloads\Motortek_Proyecto\proyecto-1-motortek-main\Motortek\app\src\main\AndroidManifest.xml:14:9-16:40
+25            android:name="com.utec.dbp10.motortek.Detalles"
+25-->C:\Users\Wese\Downloads\Motortek_Proyecto\proyecto-1-motortek-main\Motortek\app\src\main\AndroidManifest.xml:15:13-37
+26            android:label="Detalles" />
+26-->C:\Users\Wese\Downloads\Motortek_Proyecto\proyecto-1-motortek-main\Motortek\app\src\main\AndroidManifest.xml:16:13-37
+27        <activity
+27-->C:\Users\Wese\Downloads\Motortek_Proyecto\proyecto-1-motortek-main\Motortek\app\src\main\AndroidManifest.xml:17:9-19:41
+28            android:name="com.utec.dbp10.motortek.Servicios"
+28-->C:\Users\Wese\Downloads\Motortek_Proyecto\proyecto-1-motortek-main\Motortek\app\src\main\AndroidManifest.xml:18:13-38
+29            android:label="Servicios" />
+29-->C:\Users\Wese\Downloads\Motortek_Proyecto\proyecto-1-motortek-main\Motortek\app\src\main\AndroidManifest.xml:19:13-38
+30        <activity
+30-->C:\Users\Wese\Downloads\Motortek_Proyecto\proyecto-1-motortek-main\Motortek\app\src\main\AndroidManifest.xml:20:9-22:37
+31            android:name="com.utec.dbp10.motortek.Autos"
+31-->C:\Users\Wese\Downloads\Motortek_Proyecto\proyecto-1-motortek-main\Motortek\app\src\main\AndroidManifest.xml:21:13-34
+32            android:label="Autos" />
+32-->C:\Users\Wese\Downloads\Motortek_Proyecto\proyecto-1-motortek-main\Motortek\app\src\main\AndroidManifest.xml:22:13-34
+33        <activity
+33-->C:\Users\Wese\Downloads\Motortek_Proyecto\proyecto-1-motortek-main\Motortek\app\src\main\AndroidManifest.xml:23:9-25:40
+34            android:name="com.utec.dbp10.motortek.Register"
+34-->C:\Users\Wese\Downloads\Motortek_Proyecto\proyecto-1-motortek-main\Motortek\app\src\main\AndroidManifest.xml:24:13-37
+35            android:label="Register" />
+35-->C:\Users\Wese\Downloads\Motortek_Proyecto\proyecto-1-motortek-main\Motortek\app\src\main\AndroidManifest.xml:25:13-37
+36        <activity
+36-->C:\Users\Wese\Downloads\Motortek_Proyecto\proyecto-1-motortek-main\Motortek\app\src\main\AndroidManifest.xml:26:9-28:38
+37            android:name="com.utec.dbp10.motortek.Log_in"
+37-->C:\Users\Wese\Downloads\Motortek_Proyecto\proyecto-1-motortek-main\Motortek\app\src\main\AndroidManifest.xml:27:13-35
+38            android:label="Log in" />
+38-->C:\Users\Wese\Downloads\Motortek_Proyecto\proyecto-1-motortek-main\Motortek\app\src\main\AndroidManifest.xml:28:13-35
+39        <activity
+39-->C:\Users\Wese\Downloads\Motortek_Proyecto\proyecto-1-motortek-main\Motortek\app\src\main\AndroidManifest.xml:29:9-37:20
+40            android:name="com.utec.dbp10.motortek.MainActivity"
+40-->C:\Users\Wese\Downloads\Motortek_Proyecto\proyecto-1-motortek-main\Motortek\app\src\main\AndroidManifest.xml:30:13-41
+41            android:label="Motortek" >
+41-->C:\Users\Wese\Downloads\Motortek_Proyecto\proyecto-1-motortek-main\Motortek\app\src\main\AndroidManifest.xml:31:13-37
+42            <intent-filter>
+42-->C:\Users\Wese\Downloads\Motortek_Proyecto\proyecto-1-motortek-main\Motortek\app\src\main\AndroidManifest.xml:32:13-36:29
+43                <action android:name="android.intent.action.MAIN" />
+43-->C:\Users\Wese\Downloads\Motortek_Proyecto\proyecto-1-motortek-main\Motortek\app\src\main\AndroidManifest.xml:33:17-69
+43-->C:\Users\Wese\Downloads\Motortek_Proyecto\proyecto-1-motortek-main\Motortek\app\src\main\AndroidManifest.xml:33:25-66
+44
+45                <category android:name="android.intent.category.LAUNCHER" />
+45-->C:\Users\Wese\Downloads\Motortek_Proyecto\proyecto-1-motortek-main\Motortek\app\src\main\AndroidManifest.xml:35:17-77
+45-->C:\Users\Wese\Downloads\Motortek_Proyecto\proyecto-1-motortek-main\Motortek\app\src\main\AndroidManifest.xml:35:27-74
+46            </intent-filter>
+47        </activity>
+48    </application>
+49
+50</manifest>

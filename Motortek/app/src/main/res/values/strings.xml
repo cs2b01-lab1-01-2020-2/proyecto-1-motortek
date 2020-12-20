@@ -13,4 +13,11 @@
     <string name="reparaci_n_de_motor">Reparación de motor.</string>
     <string name="ver_detalles">Ver detalles</string>
     <string name="detalle">Detalle</string>
+    <string name="agregar_auto">Agregar Auto</string>
+    <string name="correo_electronico_de_cliente">Correo electronico de cliente</string>
+    <string name="modelo_de_auto">Modelo de Auto</string>
+    <string name="placa_de_auto">Placa de Auto</string>
+    <string name="agregar_servicio">Agregar Servicio</string>
+    <string name="insertar_autos">Insertar autos</string>
+    <string name="insertar_servicios">Insertar servicios</string>
 </resources>

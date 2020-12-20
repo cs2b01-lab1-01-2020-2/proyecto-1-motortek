@@ -34,6 +34,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/contrase_a"
+            android:inputType="textPassword"
             android:textSize="25dp"
             android:layout_margin="20dp"/>
         <Button
@@ -58,7 +59,7 @@
             android:layout_height="90dp"
             android:text="@string/volver"
             android:textAppearance="?android:textAppearanceMedium"
-            android:onClick="back2"
+            android:onClick="back"
             android:textColor="@color/white"
             android:textStyle="bold"
             android:textSize="34sp"
