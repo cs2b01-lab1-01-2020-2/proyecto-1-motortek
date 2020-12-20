@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".InsertServicio">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Agregar Servicio"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:background="@color/black"
+                android:layout_gravity="center_horizontal"
+                android:textAlignment="center"
+                android:textSize="40dp"
+                android:padding="23dp"
+                android:layout_marginBottom="20dp"/>
+            <EditText
+                android:id="@+id/placa_auto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/placa_de_auto"
+                android:textSize="25dp"
+                android:layout_margin="20dp"/>
+
+            <EditText
+                android:id="@+id/tipo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Tipo de servicio"
+                android:textSize="25dp"
+                android:layout_margin="20dp"/>
+
+            <EditText
+                android:id="@+id/fecha"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Fecha de servicio"
+                android:textSize="25dp"
+                android:layout_margin="20dp"/>
+
+            <EditText
+                android:id="@+id/tiempo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Tiempo en completar servicio"
+                android:textSize="25dp"
+                android:layout_margin="20dp"/>
+
+            <EditText
+                android:id="@+id/costo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Costo del servicio"
+                android:textSize="25dp"
+                android:layout_margin="20dp"/>
+
+            <EditText
+                android:id="@+id/metodo_pago"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Metodo de pago"
+                android:textSize="25dp"
+                android:layout_margin="20dp"/>
+
+            <EditText
+                android:id="@+id/descripcion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Descripción de servicio"
+                android:textSize="25dp"
+                android:layout_margin="20dp"/>
+
+            <EditText
+                android:id="@+id/personal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Personal encargado"
+                android:textSize="25dp"
+                android:layout_margin="20dp"/>
+
+            <Button
+                android:id="@+id/register"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:text="@string/agregar_servicio"
+                android:textAppearance="?android:textAppearanceMedium"
+                android:onClick="insert"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="34sp"
+                android:backgroundTint="@color/black"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginTop="30dp"
+                android:layout_gravity="center_horizontal" />
+
+            <Button
+                android:id="@+id/atras"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:text="Volver"
+                android:textAppearance="?android:textAppearanceMedium"
+                android:onClick="back"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="34sp"
+                android:backgroundTint="@color/black"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginTop="30dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="100dp"/>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

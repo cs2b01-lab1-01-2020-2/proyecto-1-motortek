@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".InsertAuto">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/agregar_auto"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:background="@color/black"
+            android:layout_gravity="center_horizontal"
+            android:textAlignment="center"
+            android:textSize="40dp"
+            android:padding="23dp"
+            android:layout_marginBottom="20dp"/>
+        <EditText
+            android:id="@+id/correo1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/correo_electronico_de_cliente"
+            android:textSize="25dp"
+            android:layout_margin="20dp"/>
+        <EditText
+            android:id="@+id/modelo_auto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/modelo_de_auto"
+            android:textSize="25dp"
+            android:layout_margin="20dp"/>
+
+        <EditText
+            android:id="@+id/placa_auto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/placa_de_auto"
+            android:textSize="25dp"
+            android:layout_margin="20dp"/>
+
+        <Button
+            android:id="@+id/register"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:text="Agregar Auto"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:onClick="insert"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="34sp"
+            android:backgroundTint="@color/black"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginTop="30dp"
+            android:layout_gravity="center_horizontal" />
+        <Button
+            android:id="@+id/atras"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:text="Volver"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:onClick="back"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="34sp"
+            android:backgroundTint="@color/black"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginTop="30dp"
+            android:layout_gravity="center_horizontal" />
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

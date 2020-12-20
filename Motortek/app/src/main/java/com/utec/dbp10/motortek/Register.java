@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -58,6 +59,7 @@ public class Register extends AppCompatActivity {
                 return true;
             }
         }
+        Log.v("ArchivoExiste","archivo no existe");
         return false;
     }
 
@@ -89,11 +91,13 @@ public class Register extends AppCompatActivity {
             if (flag)
             {
                 OutputStreamWriter file = new OutputStreamWriter(openFileOutput("motortek.txt", Activity.MODE_PRIVATE));
-                file.write(p + " " + e);
+                file.write(e + " " + p);
                 file.flush();
                 file.close();
             }
-            else
+            else {
+                Toast.makeText(this, "Esta cuenta ya se ha registrado antes", Toast.LENGTH_LONG).show();
+            }
         } catch (IOException ignored) {
         }
         Toast.makeText(this, "Se ha registrado", Toast.LENGTH_LONG).show();
