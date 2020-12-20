@@ -1,7 +1,0 @@
-#Sun Dec 20 18:39:24 COT 2020
-base.0=C\:\\Users\\Wese\\Downloads\\Motortek_Proyecto\\proyecto-1-motortek-main\\Motortek\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
-path.1=classes.dex
-renamed.1=classes2.dex
-path.0=classes.dex
-renamed.0=classes.dex
-base.1=C\:\\Users\\Wese\\Downloads\\Motortek_Proyecto\\proyecto-1-motortek-main\\Motortek\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\classes.dex
