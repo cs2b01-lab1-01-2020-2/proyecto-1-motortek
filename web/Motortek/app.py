@@ -15,7 +15,8 @@ migrate = Migrate(app, db)
 #cursor = connection.cursor()
 
 
-class Usuario_cliente(db.Model):
+
+class Usuario(db.Model):
     __tablename__='usuario_cliente'
     id = db.Column(db.Integer, primary_key=True)
     nombre = db.Column(db.String(), nullable=False)
@@ -24,16 +25,10 @@ class Usuario_cliente(db.Model):
     contacto = db.Column(db.Integer, nullable=False)
     email = db.Column(db.String(), nullable=False, unique=True)
     password = db.Column(db.String(), nullable=False)
+    tipo = db.Column(db.String(), nullable=True)
 
-class Usuario_administrador(db.Model):
-    __tablename__='usuario_administracion'
-    id = db.Column(db.Integer, primary_key=True)
-    nombre = db.Column(db.String(), nullable=False)
-    apellido = db.Column(db.String(), nullable=False)
-    sexo = db.Column(db.String(), nullable=False)
-    contacto = db.Column(db.Integer, nullable=False)
-    email = db.Column(db.String(), nullable=False, unique=True)
-    password = db.Column(db.String(), nullable=False)
+    def __repr__(self):
+        return f' {self.nombre}'
 
 class Auto(db.Model):
     __tablename__='auto'
@@ -66,6 +61,7 @@ class Mecanico(db.Model):
 
 #db.create_all()
 
+
 @app.route('/')
 def index():
     return render_template("index.html")
@@ -79,6 +75,7 @@ def admin_client():
 
 @app.route('/login', methods=['GET'])
 def login():
+
     return render_template("login.html")
     
 @app.route('/login_admin', methods=['GET'])
@@ -104,8 +101,9 @@ def proceso_register():
         contacto = request.args.get("contacto")
         correo = request.args.get("email")
         password = request.args.get("password")
+        tipo = "cliente"
         error=False
-        u = Usuario_cliente(nombre = nombre, apellido= apellido, sexo=sexo, contacto=contacto, email=correo, password=password)
+        u = Usuario(nombre = nombre, apellido= apellido, sexo=sexo, contacto=contacto, email=correo, password=password, tipo=tipo)
         db.session.add(u)
         db.session.commit()
         return redirect(url_for('login'))
@@ -124,8 +122,9 @@ def proceso_register_admin():
         contacto = request.args.get("contacto")
         correo = request.args.get("email")
         password = request.args.get("password")
+        tipo = "admin"
         error=False
-        u = Usuario_administrador(nombre=nombre, apellido= apellido, sexo=sexo, contacto=contacto, email=correo, password=password)
+        u = Usuario(nombre=nombre, apellido= apellido, sexo=sexo, contacto=contacto, email=correo, password=password, tipo = admin)
         db.session.add(u)
         db.session.commit()
         return redirect(url_for('login_admin'))
@@ -139,8 +138,8 @@ def proceso_register_admin():
 def proceso_login():
     correo = request.form['email']
     password = request.form['password']
-
-    usuario = Usuario_cliente.query.filter_by(email=correo).first()
+    tipo="cliente"
+    usuario = Usuario.query.filter_by(email=correo, tipo=tipo).first()
     
     if(usuario is None):
         return redirect(url_for('login'))
@@ -158,16 +157,26 @@ def proceso_login():
 def proceso_login_admin():
     correo = request.form['email']
     password = request.form['password']
-
-    usuario = Usuario_administrador.query.filter_by(email=correo).first()
+    tipo="admin"
+    usuario = Usuario.query.filter_by(email=correo, tipo=tipo).first()
     
     if(usuario is None):
-        return redirect(url_for('login'))
+        return redirect(url_for('login_admin'))
     else:
         if(usuario.password == password):
             return render_template("admin.html")
         else:
             return redirect(url_for('login_admin'))
+
+@app.route('/registro_auto', methods=['GET'])
+def registro_auto():
+    return render_template("register_auto.html")
+@app.route('/registro_mecanico', methods=['GET'])
+def registro_mecanico():
+    return render_template("register_mecanico.html")
+@app.route('/registro_servicio', methods=['GET'])
+def registro_servicio():
+    return render_template("register_servicio.html")
 
 @app.route('/register_auto', methods=['GET'])
 def register_auto():

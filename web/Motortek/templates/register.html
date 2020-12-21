@@ -5,9 +5,23 @@
     <title>Cliente MotorTek</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
     <link rel=StyleSheet href="{{ url_for('static',filename='styles/css.css') }}" type="text/css" media=screen>
+    <style>
+        input:placeholder-shown {
+            border-color: teal;
+            color: purple;
+            font-style: italic;
+            text-align: center;
+            }
+        label{
+            -webkit-text-fill-color: black;
+            -webkit-text-stroke: 0.2px red;
+        }
+
+    </style>
   </head>
   <header>
-    <nav><img id="logo" src="{{url_for('static', filename='images/Motortek_logo_1.png')}}" width="350">
+    <img id="logo" src="{{url_for('static', filename='images/Motortek_logo_1.png')}}" width="350" style="background-color: #ffffff3d; margin: 10px;"><br>
+    <nav>
       <ul>
         <li><a href="/">Inicio</a></li>
         <li><a href="/login">Cliente</a></li>
@@ -55,7 +69,9 @@
                         <label>Ingrese su sexo:</label>
                     </th>
                     <td>
-                        <input type="text" placeholder="Sexo" name="sexo"><br>
+                        <input id ="sexo" type="radio" value="masculino" name="sexo"><label>Masculino</label>
+                        <input id ="sexo" type="radio" value="femenino" name="sexo"><label>Femenino</label>
+                        <input id ="sexo" type="radio" value="no precisa" name="sexo"><label>No preciso</label>
                     </td>
                 </tr>
                 <tr>
