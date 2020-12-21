@@ -48,12 +48,3 @@ A continuación se presentan las caracteríticas implementadas dentro de nuestro
 ![detalles](https://user-images.githubusercontent.com/71047903/102826167-20e23c00-43ae-11eb-9ad0-4b76f4ebe9e7.PNG)
 
 
-## Intents:
-
-## Botones:
-
-## Adapters:
-
-## Toasts:
-
-## Uso de base de datos:
