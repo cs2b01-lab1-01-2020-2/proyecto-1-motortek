@@ -1,13 +1,13 @@
 # Desarrollo Basado en Plataformas Sección 1.01 - Proyecto 1
 ## Nombre del Proyecto: Motortek
 
-## Integrantes: 
+## Integrantes ✒️
 - Juan Pablo Miguel Lozada Velasco
 - Claudio Alejandro Echarre Lopez
 - Jorge Harlop Flores Berrio
 - Jose Miguel Sanchez Atahualpa
 
-## Descripción del proyecto
+## Descripción del proyecto :book:
 En este primer proyecto del curso, se buscó recrear una típica problemática de un negocio que busca digitalizarse y así brindar un mejor servicio a sus clientes. Es así, que tomamos el caso de la empresa **Motortek** que busca pasar de su sistema tradicional hacia uno más moderno y cómodo tanto para sus clientes y personal.
 ### Sobre Motortek:
 Motortek es una empresa peruana que brinda los servicios de un taller de autos y lleva más de 6 años dentro del mercado. Este taller recibe a diario muchísimas llamadas y mensajes de sus clientes que solicitan conocer el estado de su vehiculo, provocando que algunas veces esto sea un trabajo agobiante o que reciban quejas de su servicio al cliente. Por lo tanto, el administrador de Motortek se siente que necesita brindar este servicio haciendo uso de una página web.
@@ -15,7 +15,7 @@ Motortek es una empresa peruana que brinda los servicios de un taller de autos y
 "Motortek" es la página web del taller de autos del mismo nombre, en este se podrá visualizar los horarios de atención, los servicios disponibles y la información del personal (mecánicos) a cargo de un auto. Del mismo modo, el personal del taller tendrá los privilegios para registrar usuarios (clientes) al sistema para agendar un servicio para su auto. 
 Se escoge esta solución ya que permitirá al taller poder brindar información a muchísimos de sus clientes a la vez. Además, le permitirá obtener una presencia en la web y así hacerse más conocido entre los demás talleres locales.
 
-## Objetivos Principales / Misión / Visión
+## Objetivos Principales / Misión / Visión :dart:
 ### Misión:
 - Trabajar en equipo para que el producto final sea el resultado de combinar diferentes buenas ideas.
 ### Visión:
@@ -26,7 +26,7 @@ Se escoge esta solución ya que permitirá al taller poder brindar información 
 - Diseñar e implementar dentro del proyecto una base de datos relacional.
 - Añadir una interfaz para facilitar la interacción con el sistema.
 
-## Tecnologías Involucradas 
+## Tecnologías Involucradas :computer:
 ### Front-end: 
 HTML, CSS
 #### index.html:
@@ -57,7 +57,7 @@ Se utiliza Postgresql para la base de datos de este proyecto.
 ## Script para crear la base de Datos:
 `python script.py`
 
-## Información sobre los API. Request
+## Información sobre los API. Request 🛠️
 Se utilizan varios @app.route que reciben y retornan información.
 ## Hosts
 Tanto el front-end y back-end del proyecto son soportados en un Host local.
@@ -94,7 +94,7 @@ def proceso_login_admin():
     else: 
         return render_template('login.html', data=True)         
 ```
-## Manejo de Errores:
+## Manejo de Errores :white_check_mark:
 Los errores son manejados dentro del proyecto de acuerdo a los inputs del usuario. Por ejemplo, para iniciar sesión en el sistema es necesario ingresar un usuario y contraseña válido (almacenado en la base de datos) 
 ### Error en Registro de Usuarios:
 Se produce el mensaje de error cuando se intenta registrar un usuario que ya está registrado en el sistema.
@@ -220,10 +220,15 @@ def register_mecanico():
     finally:
         return render_template("admin.html", error=error)       
 ```
-## Cómo ejecutar el sistema:
+## Cómo ejecutar el sistema 📦
 En la primera vez que se ejecuta el sistema es necesario ejecutar el script para la creación de la base de datos: `python script.py`
 Luego, para iniciar el sistema: `python app.py`
-
-## El aplicativo Motortek:
+## |-------------------------------------------------------------------------------------------------|
+## El aplicativo Motortek :iphone:
 ## Definición del Problema:
-La empresa Motortek desea también una forma práctica para sus clientes de acceder a estos nuevos servicios digitales. Es así, que se propone la creación de un aplicativo Android.
+La empresa Motortek desea ir un paso más en cuanto a su servicio de atención al cliente y se pregunta como podria brindar este servicio de una forma más práctica y cómoda. Es así, que nuestro equipo propone la creación de un aplicativo Android.
+
+Este aplicativo deberá funcionar de tal manera que se puedan realizar las mismas operaciones que ofrece la página web y tener una vista agradabale y simple para una mejor experiencia de usuario. 
+
+## 
+
