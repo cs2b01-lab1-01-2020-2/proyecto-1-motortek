@@ -10,6 +10,21 @@
               -webkit-text-fill-color: black;
               -webkit-text-stroke: 0.2px red;
           }
+        th, td {
+            padding: 10px;
+        }
+        input:placeholder-shown {
+            border-color: teal;
+            color: purple;
+            font-style: italic;
+            text-align: center;
+            }
+        table{
+          -moz-border-radius: 17px;
+          -webkit-border-radius: 17px;
+          margin: auto;  
+          background-color: #c4917a80;
+        }
       </style>
   </head>
   <header>
@@ -38,7 +53,7 @@
     <div style="text-align: center;" cellpadding="2px" cellspacing="5px">
         <table style="margin-left: 50px;">
             <form action="/register_mecanico" method="get" name="">
-                <table>
+                <table >
                     <tr>
                         <th>
                             <label>Ingrese el dni del mecanico:</label>
@@ -106,9 +121,10 @@
                     </tr>
                     <tr>
                         <th>&nbsp;</th>
+                        <td><input class="btn btn-success" type="submit" id="submit" value="Registrar"></td>
                     </tr>
                 </table>
-            <input class="btn btn-success" type="submit" id="submit" value="Registrar">
+            
             </form><br>
     
     {%if error%}
