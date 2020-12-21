@@ -28,10 +28,10 @@ public class InsertAuto extends AppCompatActivity {
 
         String[] archivos = fileList();
 
-        if (ArchivoExiste(archivos, "autos.txt"))
+        if (ArchivoExiste(archivos, "autos_final.txt"))
         {
             try {
-                InputStreamReader archivo = new InputStreamReader(openFileInput("autos.txt"));
+                InputStreamReader archivo = new InputStreamReader(openFileInput("autos_final.txt"));
                 BufferedReader br = new BufferedReader(archivo);
                 String linea = br.readLine();
 

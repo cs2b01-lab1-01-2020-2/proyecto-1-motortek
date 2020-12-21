@@ -27,10 +27,10 @@ public class InsertServicio extends AppCompatActivity {
 
         String[] archivos = fileList();
 
-        if (ArchivoExiste(archivos, "auto.txt"))
+        if (ArchivoExiste(archivos, "autos_final.txt"))
         {
             try {
-                InputStreamReader archivo = new InputStreamReader(openFileInput("auto.txt"));
+                InputStreamReader archivo = new InputStreamReader(openFileInput("autos_final.txt"));
                 BufferedReader br = new BufferedReader(archivo);
                 String linea = br.readLine();
 
@@ -105,7 +105,13 @@ public class InsertServicio extends AppCompatActivity {
         String personal_= personal.getText().toString();
         String metodo_= metodo.getText().toString();
 
-        escribirFichero(placa,tipo_,fecha_,tiempo_,costo_,metodo_,descripcion_,personal_);
+        if(!placa.equals("") || !tipo_.equals("") || !fecha_.equals("") || !tiempo_.equals("") || !costo_.equals("") || !descripcion_.equals("") || !personal_.equals("") || !metodo_.equals("")){
+            escribirFichero(placa,tipo_,fecha_,tiempo_,costo_,metodo_,descripcion_,personal_);
+        }
+        else{
+            Toast.makeText(this, "Hay datos vacios", Toast.LENGTH_LONG).show();
+        }
+
     }
 
 }
