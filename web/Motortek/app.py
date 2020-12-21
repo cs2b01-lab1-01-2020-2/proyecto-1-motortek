@@ -27,6 +27,9 @@ class Usuario(db.Model):
     password = db.Column(db.String(), nullable=False)
     tipo = db.Column(db.String(), nullable=True)
 
+    def __repr__(self):
+        return f' {self.nombre}'
+
 class Auto(db.Model):
     __tablename__='auto'
     email_usuario = db.Column(db.String(), ForeignKey("usuario_cliente.email"), nullable=False)
@@ -164,6 +167,16 @@ def proceso_login_admin():
             return render_template("admin.html")
         else:
             return redirect(url_for('login_admin'))
+
+@app.route('/registro_auto', methods=['GET'])
+def registro_auto():
+    return render_template("register_auto.html")
+@app.route('/registro_mecanico', methods=['GET'])
+def registro_mecanico():
+    return render_template("register_mecanico.html")
+@app.route('/registro_servicio', methods=['GET'])
+def registro_servicio():
+    return render_template("register_servicio.html")
 
 @app.route('/register_auto', methods=['GET'])
 def register_auto():

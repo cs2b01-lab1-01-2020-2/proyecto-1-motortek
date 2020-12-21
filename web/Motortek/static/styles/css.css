@@ -8,7 +8,6 @@ body{
   display: block;
 }
 header {
-  background: #BDF6F7;
   width: 100%;
   position: fixed;
   z-index: 100;
@@ -21,11 +20,13 @@ p {
   margin-bottom: 10px;
   }
   nav {
-    float: left; /* Desplazamos el nav hacia la izquierda */
+    height: 60px;
+    background-color: bisque;
   }
   
   nav ul {
     list-style: none;
+  
     overflow: hidden; /* Limpiamos errores de float */
   }
   

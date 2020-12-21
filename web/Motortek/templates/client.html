@@ -1,9 +1,51 @@
 <!DOCTYPE html>
-<html lang="es" dir="ltr">
-<head>
-<meta charset="utf-8">
-<title> Motortek </title>
-</head>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Cliente MotorTek</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel=StyleSheet href="{{ url_for('static',filename='styles/css.css') }}" type="text/css" media=screen>
+    <style>
+        label{
+              -webkit-text-fill-color: black;
+              -webkit-text-stroke: 0.2px red;
+          }
+      </style>
+  </head>
+  <header>
+
+    <img id="logo" src="{{url_for('static', filename='images/Motortek_logo_1.png')}}" width="350" style="background-color: #ffffff3d; margin: 10px;"><br>
+    <nav>
+      <ul>
+        <li><a href="/registro_auto">Registrar Autos</a></li>
+        <li><a href="/registro_mecanico">Registrar Mecanico</a></li>
+        <li><a href="/registro_servicio">Registrar Servicios</a></li>
+        <li><a href="/">Log Out</a></li>
+      </ul>
+    </nav>
+  </header>
+  <body background="{{url_for('static', filename='images/garage-background.jpg')}}" style="text-align: center;">
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h1 style="-webkit-text-fill-color: WHITE; text-shadow: -2px -2px 1px #000; ">Bienvenido {{client}}</h1><br>
+
+    {%if error%}
+    <label style="color:red;">Ocurrio un error, vuelve a intentarlo</label>
+    {%endif%}
+    
+</body>
+</html>
+
+
+
+
+
 <body>
     <label>Autos registrados en el taller:</label>
     <ul>
