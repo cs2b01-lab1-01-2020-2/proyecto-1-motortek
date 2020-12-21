@@ -1,9 +1,9 @@
 # El aplicativo Motortek :iphone:
 ## Integrantes ✒️
-- Juan Pablo Miguel Lozada Velasco
-- Claudio Alejandro Echarre Lopez
-- Jorge Harlop Flores Berrio
-- Jose Miguel Sanchez Atahualpa
+* **Juan Pablo Miguel Lozada Velasco** - [IWeseI - juan.lozada@utec.edu.pe]
+* **Claudio Alejandro Echarre Lopez** - [cecharre - claudio.echarre@utec.edu.pe]
+* **Jorge Harlop Flores Berrio** - [HarlopFlores - jorge.flores.b@utec.edu.pe]
+* **Jose Miguel Sanchez Atahualpa** - [josemiguel-AAA - jose.sanchez.a@utec.edu.pe]
 ## Definición del Problema :books:
 La empresa Motortek desea ir un paso más en cuanto a su servicio de atención al cliente y se pregunta como podria brindar este servicio de una forma más práctica y cómoda. Es así, que nuestro equipo propone la creación de un aplicativo Android.
 
@@ -14,16 +14,14 @@ Este aplicativo deberá funcionar de tal manera que se puedan realizar las misma
 ### Front-End:
 - XML
 - Android
-### Front-End:
+### Back-End:
 - Java
 ### Sistema Operativo:
-- Android (version)
-### Base de Datos:
-- PostgreSQL
+- Android Marshmallow 6.0
 
 ## Aspectos Técnicos :wrench:
 A continuación se presentan las caracteríticas implementadas dentro de nuestro proyecto.
-## Activities
+## Layouts
 ### activity_main:
 ![activity](https://user-images.githubusercontent.com/71047903/102825970-d5c82900-43ad-11eb-8da6-96d5fc27002e.PNG)
 ### activity_log_in:
@@ -47,13 +45,19 @@ A continuación se presentan las caracteríticas implementadas dentro de nuestro
 ### activity_detalles:
 ![detalles](https://user-images.githubusercontent.com/71047903/102826167-20e23c00-43ae-11eb-9ad0-4b76f4ebe9e7.PNG)
 
+## Activities 
 
-## Intents:
-
-## Botones:
-
-## Adapters:
-
-## Toasts:
-
-## Uso de base de datos:
+### MainActivity:
+Activity principal que posee 4 botones que dirigen al usuario al log_in, register, insert_auto e insert_servicio.
+### Autos:
+Muestra los autos especificos del cliente que se encuentra utilizando el sistema. Permite redirigir cada auto con sus respectivos servicios asociados.
+### InsertAuto:
+Guarda en un fichero los datos de un auto específico.
+### Servicios:
+Muestra todos los servicios de un auto específico.
+### InsertServicio:
+Guarda en un fichero un servicio.
+### Log_in:
+Permite la autenticación de usuarios dentro del sistema. De este modo, tiliza un fichero para comprobar que el usuario que desea entrar al sistema se encuentre registrado.
+### Register:
+Registra al usuario que desea crearse una cuenta para usar el servicio. Es así, que la data es guardada en un fichero y al usuario se le permite iniciar sesión en el aplicativo.
