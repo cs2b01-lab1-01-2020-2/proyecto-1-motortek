@@ -7,9 +7,17 @@
     <link rel=StyleSheet href="{{ url_for('static',filename='styles/css.css') }}" type="text/css" media=screen>
     <style>
         label{
+          font-family: Arial, Helvetica, sans-serif;
+          font-size: medium;
               -webkit-text-fill-color: black;
               -webkit-text-stroke: 0.2px red;
           }
+        table{
+          -moz-border-radius: 17px;
+          -webkit-border-radius: 17px;
+          margin: auto;  
+          background-color: #c4917a80;
+        }
       </style>
   </head>
   <header>
@@ -17,9 +25,6 @@
     <img id="logo" src="{{url_for('static', filename='images/Motortek_logo_1.png')}}" width="350" style="background-color: #ffffff3d; margin: 10px;"><br>
     <nav>
       <ul>
-        <li><a href="/registro_auto">Registrar Autos</a></li>
-        <li><a href="/registro_mecanico">Registrar Mecanico</a></li>
-        <li><a href="/registro_servicio">Registrar Servicios</a></li>
         <li><a href="/">Log Out</a></li>
       </ul>
     </nav>
@@ -35,30 +40,41 @@
     <br>
     <h1 style="-webkit-text-fill-color: WHITE; text-shadow: -2px -2px 1px #000; ">Bienvenido {{client}}</h1><br>
 
+    <table>
+      <tr>
+          <th style="padding: 10px;">
+              <label>Autos registrados en el taller:</label>
+          </th>
+          <td style="padding: 10px;">
+            <ul>
+              {% for a in autos %}
+              <label >{{a}}</label><br> 
+              {% endfor %}
+          </ul>
+          </td>
+      </tr>
+      <tr>
+          <th>&nbsp;</th>
+      </tr>
+      <tr>
+          <th style="padding: 10px;">
+            <label>Servicios completados en el taller:</label>  
+          </th>
+          <td style="padding: 10px;">
+            {% for s in servicios %}
+            <label >Servicio: {{s.id}}, Placa: {{s.numplaca}}</label><br>
+            <label >Descripcion: {{s.descripcion}}, Costo: {{s.costo}}</label><br> 
+            <label >Ingreso {{s.fecha_ingreso}}, Entrega: {{s.fecha_entrega}}</label><br>  
+            {% endfor %}
+          </td>
+      </tr>
+      <tr>
+          <th>&nbsp;</th>
+      </tr>
+
     {%if error%}
     <label style="color:red;">Ocurrio un error, vuelve a intentarlo</label>
     {%endif%}
     
 </body>
-</html>
-
-
-
-
-
-<body>
-    <label>Autos registrados en el taller:</label>
-    <ul>
-        {% for a in autos %}
-        <li>{{a}}</li>
-        {% endfor %}
-    </ul>
-    <label>Servicios completados en el taller:</label>
-    <ul>
-        {% for s in servicios %}
-        <li>{{s}}</li>
-        {% endfor %}
-    </ul>
-</body>
-
 </html>

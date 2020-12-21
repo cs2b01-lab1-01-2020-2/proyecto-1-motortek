@@ -36,6 +36,9 @@ class Auto(db.Model):
     numplaca = db.Column(db.Integer, primary_key=True)
     modelo = db.Column(db.String(), nullable=False)
     foto = db.Column(db.LargeBinary, nullable=True)
+    
+    def __repr__(self):
+        return f'Auto {self.modelo}, placa {self.numplaca}'
 
 class Servicio(db.Model):
     __tablename__='servicio'
