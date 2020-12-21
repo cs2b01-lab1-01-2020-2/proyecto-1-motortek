@@ -158,10 +158,6 @@ def proceso_login():
         else:
             return redirect(url_for('login'))
     
-@app.route('/admin', methods=['GET'])
-def ref_admin():
-    return render_template('admin.html')
-
 @app.route('/admin', methods=['POST'])
 def proceso_login_admin():
     correo = request.form['email']

@@ -17,6 +17,25 @@
                 text-align: center;
 
             }
+            .ul{
+              list-style: none;
+                padding:0;
+                margin:0;
+                width: 300px;
+            }
+            .list_button {
+              clear: both;
+                -webkit-appearance: none;
+                border: none;
+                outline: none;
+                color: red;
+                font-size: 20px;    
+                cursor: pointer;
+                float: right;
+                background-color: none;
+                
+            }
+        
       </style>
   </head>
   <header>
@@ -24,7 +43,6 @@
     <img id="logo" src="{{url_for('static', filename='images/Motortek_logo_1.png')}}" width="350" style="background-color: #ffffff3d; margin: 10px;"><br>
     <nav>
       <ul>
-        <li><a href="/admin">Dashboard</a></li>
         <li><a href="/registro_auto">Registrar Autos</a></li>
         <li><a href="/registro_mecanico">Registrar Mecanico</a></li>
         <li><a href="/registro_servicio">Registrar Servicios</a></li>
@@ -41,14 +59,7 @@
     <br>
     <br>
     <br>
-    <h1 style="-webkit-text-fill-color: WHITE; text-shadow: -2px -2px 1px #000; ">Dashboard</h1><br>
-
-    <div class="menu-todo" style="align-content: center;"></div>
-    <a href="/admin/autos" class="btn btn-info" role="button">Autos</a>
-    <a href="/admin/mecanicos" class="btn btn-info" role="button">Mecanico</a>
-    <a href="/admin/servicios" class="btn btn-info" role="button">Servicios</a>
-    </div>
-
+    <h1 style="-webkit-text-fill-color: WHITE; text-shadow: -2px -2px 1px #000; "> Bienvenido Administrador</h1><br>
     
 </body>
 </html>

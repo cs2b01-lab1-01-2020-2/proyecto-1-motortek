@@ -47,7 +47,6 @@
     <img id="logo" src="{{url_for('static', filename='images/Motortek_logo_1.png')}}" width="350" style="background-color: #ffffff3d; margin: 10px;"><br>
     <nav>
       <ul>
-        <li><a href="/admin">Dashboard</a></li>
         <li><a href="/registro_auto">Registrar Autos</a></li>
         <li><a href="/registro_mecanico">Registrar Mecanico</a></li>
         <li><a href="/registro_servicio">Registrar Servicios</a></li>
@@ -108,8 +107,11 @@
                             <label>Ingrese el sexo del mecanico:</label>
                         </th>
                         <td>
-                            <input id ="sexo" type="text"  name="sexo"><label>/label>
-                            
+                            <select id = "sexo"  name="sexo">
+                                <option>masculino</option>
+                                <option>femenino</option>
+                                <option>no precisa</option>
+                            </select>
                         </td>
                     </tr>
                     <tr>
