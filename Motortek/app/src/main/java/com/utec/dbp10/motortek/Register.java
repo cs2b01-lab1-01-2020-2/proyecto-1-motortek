@@ -3,9 +3,9 @@ package com.utec.dbp10.motortek;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -18,37 +18,17 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.io.File;
 
 public class Register extends AppCompatActivity {
 
     List<String> ficheroCompleto = new ArrayList<>();
-    StringBuilder ficheroTxt = new StringBuilder();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        String[] archivos = fileList();
-
-        if (ArchivoExiste(archivos, "motortek.txt"))
-        {
-            try {
-                InputStreamReader archivo = new InputStreamReader(openFileInput("motortek.txt"));
-                BufferedReader br = new BufferedReader(archivo);
-                String linea = br.readLine();
-
-                while (linea != null){
-                    ficheroCompleto.add(linea);
-                    ficheroTxt.append(linea).append('\n');
-                    linea = br.readLine();
-                }
-                br.close();
-                archivo.close();
-            } catch (IOException ignored) {
-
-            }
-        }
     }
 
     private boolean ArchivoExiste(String[] files, String nombreArchivo) {
@@ -59,11 +39,53 @@ public class Register extends AppCompatActivity {
                 return true;
             }
         }
-        Log.v("ArchivoExiste","archivo no existe");
         return false;
     }
 
+    public void escribirFichero(String p, String e){
+        try {
+            boolean flag = true;
+            for (String j : ficheroCompleto)
+            {
+                String[] words = j.split(" ");
+                if (words[0].equals(e))
+                {
+                    flag = false;
+                    Toast.makeText(this, "Ya se ha registrado anteriormente", Toast.LENGTH_LONG).show();
+                }
+            }
+            if (flag)
+            {
+                OutputStreamWriter file = new OutputStreamWriter(openFileOutput("usuario.txt", Activity.MODE_APPEND));
+                file.append("\n").append(e).append(" ").append(p);
+                file.flush();
+                file.close();
+                Toast.makeText(this, "Se ha registrado", Toast.LENGTH_LONG).show();
+            }
+        } catch (IOException ignored) {
+        }
+    }
+
     public void register (View view){
+        String[] archivos = fileList();
+
+        if (ArchivoExiste(archivos, "usuario.txt"))
+        {
+            try {
+                InputStreamReader archivo = new InputStreamReader(openFileInput("usuario.txt"));
+                BufferedReader br = new BufferedReader(archivo);
+                String linea = br.readLine();
+
+                while (linea != null){
+                    ficheroCompleto.add(linea);
+                    linea = br.readLine();
+                }
+                br.close();
+                archivo.close();
+            } catch (IOException ignored) {
+
+            }
+        }
         EditText email1 = findViewById(R.id.correo);
         EditText password1 = findViewById(R.id.password);
         String password = password1.getText().toString();
@@ -77,33 +99,8 @@ public class Register extends AppCompatActivity {
         }
     }
 
-    public void escribirFichero(String p, String e){
-        try {
-            boolean flag = true;
-            for (String j : ficheroCompleto)
-            {
-                String[] words = j.split(" ");
-                if (words[0].equals(e) && words[1].equals(p))
-                {
-                    flag = false;
-                }
-            }
-            if (flag)
-            {
-                OutputStreamWriter file = new OutputStreamWriter(openFileOutput("motortek.txt", Activity.MODE_PRIVATE));
-                file.write(e + " " + p);
-                file.flush();
-                file.close();
-            }
-            else {
-                Toast.makeText(this, "Esta cuenta ya se ha registrado antes", Toast.LENGTH_LONG).show();
-            }
-        } catch (IOException ignored) {
-        }
-        Toast.makeText(this, "Se ha registrado", Toast.LENGTH_LONG).show();
-    }
 
-    public void back2 (View view){
+    public void back (View view){
         Intent back = new Intent(this, MainActivity.class);
         startActivity(back);
     }

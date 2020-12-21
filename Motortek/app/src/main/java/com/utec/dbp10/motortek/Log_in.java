@@ -2,6 +2,7 @@ package com.utec.dbp10.motortek;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -11,6 +12,7 @@ import android.widget.Toast;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,25 +25,6 @@ public class Log_in extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log_in);
 
-        String[] archivos = fileList();
-
-        if (ArchivoExiste(archivos, "motortek.txt"))
-        {
-            try {
-                InputStreamReader archivo = new InputStreamReader(openFileInput("motortek.txt"));
-                BufferedReader br = new BufferedReader(archivo);
-                String linea = br.readLine();
-
-                while (linea != null){
-                    ficheroCompleto.add(linea);
-                    linea = br.readLine();
-                }
-                br.close();
-                archivo.close();
-            } catch (IOException ignored) {
-
-            }
-        }
     }
 
     private boolean ArchivoExiste(String[] files, String nombreArchivo) {
@@ -55,24 +38,60 @@ public class Log_in extends AppCompatActivity {
         return false;
     }
 
-    public void login1 (View view){
+    public void escribirFichero(String p){
+        try {
+            OutputStreamWriter file = new OutputStreamWriter(openFileOutput("current_usuario.txt", Activity.MODE_APPEND));
+            file.write(p);
+            file.flush();
+            file.close();
+            Toast.makeText(this, "Se ha registrado", Toast.LENGTH_LONG).show();
+        } catch (IOException ignored) {
+        }
+    }
+
+    public void login (View view){
+        String[] archivos = fileList();
+
+        if (ArchivoExiste(archivos, "usuario.txt"))
+        {
+            try {
+                InputStreamReader archivo = new InputStreamReader(openFileInput("usuario.txt"));
+                BufferedReader br = new BufferedReader(archivo);
+                String linea = br.readLine();
+
+                while (linea != null){
+                    ficheroCompleto.add(linea);
+                    linea = br.readLine();
+                }
+                br.close();
+                archivo.close();
+            } catch (IOException ignored) {
+
+            }
+        }
         Intent login = new Intent(this, Autos.class);
         EditText email1 = findViewById(R.id.correo1);
         EditText password1 = findViewById(R.id.password);
         String password = password1.getText().toString();
         String email = email1.getText().toString();
+        boolean l = false;
         for (String j : ficheroCompleto)
         {
             String[] words = j.split(" ");
             if (words[0].equals(email) && words[1].equals(password))
             {
+                l = true;
                 startActivity(login);
+                escribirFichero(email);
+                break;
             }
         }
-        Toast.makeText(this, "Datos incorrectos", Toast.LENGTH_LONG).show();
+        if(!l){
+            Toast.makeText(this, "Datos incorrectos", Toast.LENGTH_LONG).show();
+        }
     }
 
-    public void back1 (View view){
+    public void back (View view){
         Intent back = new Intent(this, MainActivity.class);
         startActivity(back);
     }

@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Motortek.iml" filepath="$PROJECT_DIR$/.idea/modules/Motortek.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Motortek.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Motortek.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/postgresql-42.2.18/Motortek.postgresql-42.2.18.iml" filepath="$PROJECT_DIR$/.idea/modules/postgresql-42.2.18/Motortek.postgresql-42.2.18.iml" />
     </modules>
   </component>
 </project>

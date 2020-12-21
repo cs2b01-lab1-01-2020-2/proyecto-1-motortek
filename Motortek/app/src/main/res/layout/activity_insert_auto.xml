@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Register">
-
+    tools:context=".InsertAuto">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -13,7 +12,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/register"
+            android:text="@string/agregar_auto"
             android:textColor="@color/white"
             android:textStyle="bold"
             android:background="@color/black"
@@ -26,24 +25,32 @@
             android:id="@+id/correo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/correo_electronico"
+            android:hint="@string/correo_electronico_de_cliente"
             android:textSize="25dp"
             android:layout_margin="20dp"/>
         <EditText
-            android:id="@+id/password"
+            android:id="@+id/modelo_auto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/contrase_a"
-            android:inputType="textPassword"
+            android:hint="@string/modelo_de_auto"
             android:textSize="25dp"
             android:layout_margin="20dp"/>
+
+        <EditText
+            android:id="@+id/placa_auto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/placa_de_auto"
+            android:textSize="25dp"
+            android:layout_margin="20dp"/>
+
         <Button
             android:id="@+id/register"
             android:layout_width="match_parent"
             android:layout_height="90dp"
-            android:text="@string/registrarse"
+            android:text="Agregar Auto"
             android:textAppearance="?android:textAppearanceMedium"
-            android:onClick="register"
+            android:onClick="insert"
             android:textColor="@color/white"
             android:textStyle="bold"
             android:textSize="34sp"
@@ -52,12 +59,11 @@
             android:layout_marginRight="40dp"
             android:layout_marginTop="30dp"
             android:layout_gravity="center_horizontal" />
-
         <Button
             android:id="@+id/atras"
             android:layout_width="match_parent"
             android:layout_height="90dp"
-            android:text="@string/volver"
+            android:text="Volver"
             android:textAppearance="?android:textAppearanceMedium"
             android:onClick="back"
             android:textColor="@color/white"
