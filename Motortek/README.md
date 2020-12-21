@@ -1,9 +1,9 @@
 # El aplicativo Motortek :iphone:
 ## Integrantes ✒️
-- Juan Pablo Miguel Lozada Velasco
-- Claudio Alejandro Echarre Lopez
-- Jorge Harlop Flores Berrio
-- Jose Miguel Sanchez Atahualpa
+* **Juan Pablo Miguel Lozada Velasco** - [IWeseI - juan.lozada@utec.edu.pe]
+* **Claudio Alejandro Echarre Lopez** - [cecharre - claudio.echarre@utec.edu.pe]
+* **Jorge Harlop Flores Berrio** - [HarlopFlores - jorge.flores.b@utec.edu.pe]
+* **Jose Miguel Sanchez Atahualpa** - [josemiguel-AAA - jose.sanchez.a@utec.edu.pe]
 ## Definición del Problema :books:
 La empresa Motortek desea ir un paso más en cuanto a su servicio de atención al cliente y se pregunta como podria brindar este servicio de una forma más práctica y cómoda. Es así, que nuestro equipo propone la creación de un aplicativo Android.
 
@@ -48,7 +48,7 @@ A continuación se presentan las caracteríticas implementadas dentro de nuestro
 ## Activities 
 
 ### MainActivity:
-Activity que posee 4 botones que dirigen al usuario al log_in, register, insert_auto e insert_servicio.
+Activity principal que posee 4 botones que dirigen al usuario al log_in, register, insert_auto e insert_servicio.
 ### Autos:
 Muestra los autos especificos del cliente que se encuentra utilizando el sistema. Permite redirigir cada auto con sus respectivos servicios asociados.
 ### InsertAuto:
