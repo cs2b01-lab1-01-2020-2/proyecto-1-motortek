@@ -70,8 +70,8 @@ public class InsertServicio extends AppCompatActivity {
             }
             if (flag)
             {
-                OutputStreamWriter file = new OutputStreamWriter(openFileOutput("auto.txt", Activity.MODE_APPEND));
-                file.append("\n").append(placa).append(" ").append(tipo).append(" ").append(fecha).append(tiempo).append(" ").append(costo).append(" ").append(metodo).append(descripcion).append(" ").append(personal);
+                OutputStreamWriter file = new OutputStreamWriter(openFileOutput("servicios_core.txt", Activity.MODE_APPEND));
+                file.append("\n").append(placa).append(";").append(tipo).append(";").append(fecha).append(";").append(tiempo).append(";").append(costo).append(";").append(metodo).append(";").append(descripcion).append(";").append(personal);
                 file.flush();
                 file.close();
                 Toast.makeText(this, "Se inserto el servicio", Toast.LENGTH_LONG).show();

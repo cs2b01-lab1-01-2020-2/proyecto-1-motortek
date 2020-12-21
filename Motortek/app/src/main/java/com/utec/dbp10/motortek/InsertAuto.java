@@ -28,10 +28,10 @@ public class InsertAuto extends AppCompatActivity {
 
         String[] archivos = fileList();
 
-        if (ArchivoExiste(archivos, "auto.txt"))
+        if (ArchivoExiste(archivos, "autos.txt"))
         {
             try {
-                InputStreamReader archivo = new InputStreamReader(openFileInput("auto.txt"));
+                InputStreamReader archivo = new InputStreamReader(openFileInput("autos.txt"));
                 BufferedReader br = new BufferedReader(archivo);
                 String linea = br.readLine();
 
@@ -88,8 +88,8 @@ public class InsertAuto extends AppCompatActivity {
             }
             if (flag)
             {
-                OutputStreamWriter file = new OutputStreamWriter(openFileOutput("auto.txt", Activity.MODE_APPEND));
-                file.append("\n").append(p).append(" ").append(c).append(" ").append(m);
+                OutputStreamWriter file = new OutputStreamWriter(openFileOutput("autos_final.txt", Activity.MODE_APPEND));
+                file.append("\n").append(p).append("/").append(c).append("/").append(m);
                 file.flush();
                 file.close();
                 Toast.makeText(this, "Se ha insertado el auto", Toast.LENGTH_LONG).show();
@@ -111,7 +111,12 @@ public class InsertAuto extends AppCompatActivity {
         String placa = numplaca.getText().toString();
         String modelo = modelo_auto.getText().toString();
         String correo = correo_auto.getText().toString();
+        if(!placa.equals("") || !correo.equals("") || !modelo.equals("")){
+            escribirFichero(placa,correo,modelo);
+        }
+        else{
+            Toast.makeText(this, "Hay datos vacios", Toast.LENGTH_LONG).show();
+        }
 
-        escribirFichero(placa,correo,modelo);
     }
 }

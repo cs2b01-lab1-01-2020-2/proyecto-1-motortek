@@ -2,10 +2,10 @@
 ## Nombre del Proyecto: Motortek
 
 ## Integrantes ✒️
-- Juan Pablo Miguel Lozada Velasco
-- Claudio Alejandro Echarre Lopez
-- Jorge Harlop Flores Berrio
-- Jose Miguel Sanchez Atahualpa
+* **Juan Pablo Miguel Lozada Velasco** - [IWeseI - juan.lozada@utec.edu.pe]
+* **Claudio Alejandro Echarre Lopez** - [cecharre - claudio.echarre@utec.edu.pe]
+* **Jorge Harlop Flores Berrio** - [HarlopFlores - jorge.flores.b@utec.edu.pe]
+* **Jose Miguel Sanchez Atahualpa** - [josemiguel-AAA - jose.sanchez.a@utec.edu.pe]
 
 ## Descripción del proyecto :book:
 En este primer proyecto del curso, se buscó recrear una típica problemática de un negocio que busca digitalizarse y así brindar un mejor servicio a sus clientes. Es así, que tomamos el caso de la empresa **Motortek** que busca pasar de su sistema tradicional hacia uno más moderno y cómodo tanto para sus clientes y personal.

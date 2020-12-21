@@ -40,11 +40,11 @@ public class Log_in extends AppCompatActivity {
 
     public void escribirFichero(String p){
         try {
-            OutputStreamWriter file = new OutputStreamWriter(openFileOutput("current_usuario.txt", Activity.MODE_APPEND));
+            OutputStreamWriter file = new OutputStreamWriter(openFileOutput("current_usuario.txt", Activity.MODE_PRIVATE));
             file.write(p);
             file.flush();
             file.close();
-            Toast.makeText(this, "Se ha registrado", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Log in exitoso", Toast.LENGTH_SHORT).show();
         } catch (IOException ignored) {
         }
     }
@@ -81,8 +81,8 @@ public class Log_in extends AppCompatActivity {
             if (words[0].equals(email) && words[1].equals(password))
             {
                 l = true;
-                startActivity(login);
                 escribirFichero(email);
+                startActivity(login);
                 break;
             }
         }

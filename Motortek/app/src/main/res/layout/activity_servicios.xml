@@ -13,194 +13,51 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/servicios"
-                android:textColor="@color/white"
-                android:textStyle="bold"
-                android:background="@color/black"
-                android:layout_gravity="center_horizontal"
-                android:textAlignment="center"
-                android:textSize="40dp"
-                android:padding="23dp"
-                android:layout_marginBottom="20dp"/>
             <LinearLayout
+                android:id="@+id/main"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
-                android:layout_marginBottom="40dp">
+                android:orientation="vertical">
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="70dp"
-                    android:text="@string/servicio"
+                    android:layout_height="wrap_content"
+                    android:text="@string/servicios"
                     android:textColor="@color/white"
+                    android:textStyle="bold"
                     android:background="@color/black"
-                    android:padding="20dp"
-                    android:textSize="24sp" />
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="80dp"
-                    android:textColor="@color/black"
-                    android:textSize="24sp"
-                    android:padding="20dp"
-                    android:text="@string/planchado_y_pintura"
-                    android:background="@color/white"/>
-                <View
-                    android:layout_width="fill_parent"
-                    android:layout_height="2dp"
-                    android:visibility="visible"
-                    android:background="@android:color/darker_gray"/>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="80dp"
-                    android:textColor="@color/black"
-                    android:textSize="24sp"
-                    android:padding="20dp"
-                    android:text="01/12/20"
-                    android:background="@color/white"/>
-                <View
-                    android:layout_width="fill_parent"
-                    android:layout_height="2dp"
-                    android:visibility="visible"
-                    android:background="@android:color/darker_gray"/>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="80dp"
-                    android:textColor="@color/white"
-                    android:textSize="24sp"
-                    android:padding="20dp"
-                    android:onClick="detalle"
-                    android:text="@string/ver_detalles"
-                    android:background="@color/black"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
-                android:layout_marginBottom="40dp">
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="70dp"
-                    android:text="@string/servicio"
-                    android:textColor="@color/white"
-                    android:background="@color/black"
-                    android:padding="20dp"
-                    android:textSize="24sp" />
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="80dp"
-                    android:textColor="@color/black"
-                    android:textSize="24sp"
-                    android:padding="20dp"
-                    android:text="@string/mantenimiento_general"
-                    android:background="@color/white"/>
-                <View
-                    android:layout_width="fill_parent"
-                    android:layout_height="2dp"
-                    android:visibility="visible"
-                    android:background="@android:color/darker_gray"/>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="80dp"
-                    android:textColor="@color/black"
-                    android:textSize="24sp"
-                    android:padding="20dp"
-                    android:text="03/11/20"
-                    android:background="@color/white"/>
-                <View
-                    android:layout_width="fill_parent"
-                    android:layout_height="2dp"
-                    android:visibility="visible"
-                    android:background="@android:color/darker_gray"/>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="80dp"
-                    android:textColor="@color/white"
-                    android:textSize="24sp"
-                    android:padding="20dp"
-                    android:onClick="detalle"
-                    android:text="@string/ver_detalles"
-                    android:background="@color/black"/>
+                    android:layout_gravity="center_horizontal"
+                    android:textAlignment="center"
+                    android:textSize="40dp"
+                    android:padding="23dp"
+                    android:layout_marginBottom="20dp"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
-                android:layout_marginBottom="40dp">
-                <TextView
+                android:orientation="vertical">
+                <Button
+                    android:id="@+id/atras"
                     android:layout_width="match_parent"
-                    android:layout_height="70dp"
-                    android:text="@string/servicio"
+                    android:layout_height="90dp"
+                    android:text="@string/volver"
+                    android:textAppearance="?android:textAppearanceMedium"
+                    android:onClick="back"
                     android:textColor="@color/white"
-                    android:background="@color/black"
-                    android:padding="20dp"
-                    android:textSize="24sp" />
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="80dp"
-                    android:textColor="@color/black"
-                    android:textSize="24sp"
-                    android:padding="20dp"
-                    android:text="@string/reparaci_n_de_motor"
-                    android:background="@color/white"/>
-                <View
-                    android:layout_width="fill_parent"
-                    android:layout_height="2dp"
-                    android:visibility="visible"
-                    android:background="@android:color/darker_gray"/>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="80dp"
-                    android:textColor="@color/black"
-                    android:textSize="24sp"
-                    android:padding="20dp"
-                    android:text="17/09/20"
-                    android:background="@color/white"/>
-                <View
-                    android:layout_width="fill_parent"
-                    android:layout_height="2dp"
-                    android:visibility="visible"
-                    android:background="@android:color/darker_gray"/>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="80dp"
-                    android:textColor="@color/white"
-                    android:textSize="24sp"
-                    android:padding="20dp"
-                    android:onClick="detalle"
-                    android:text="@string/ver_detalles"
-                    android:background="@color/black"/>
+                    android:textStyle="bold"
+                    android:textSize="34sp"
+                    android:backgroundTint="@color/black"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginRight="40dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginBottom="100dp"
+                    android:layout_gravity="center_horizontal"
+                    android:foregroundGravity="bottom"/>
             </LinearLayout>
-
-
-            <Button
-                android:id="@+id/atras"
-                android:layout_width="match_parent"
-                android:layout_height="90dp"
-                android:text="@string/volver"
-                android:textAppearance="?android:textAppearanceMedium"
-                android:onClick="back"
-                android:textColor="@color/white"
-                android:textStyle="bold"
-                android:textSize="34sp"
-                android:backgroundTint="@color/black"
-                android:layout_marginLeft="40dp"
-                android:layout_marginRight="40dp"
-                android:layout_marginTop="30dp"
-                android:layout_marginBottom="100dp"
-                android:layout_gravity="center_horizontal"
-                android:foregroundGravity="bottom"/>
-
 
         </LinearLayout>
+
+
+
 
     </ScrollView>
 
