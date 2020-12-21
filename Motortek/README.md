@@ -42,6 +42,7 @@ A continuación se presentan las caracteríticas implementadas dentro de nuestro
 ![insert servicio](https://user-images.githubusercontent.com/71047903/102826122-0a3be500-43ae-11eb-9e63-f3520de6e03a.PNG)
 
 ### activity_servicios:
+![servicios](https://user-images.githubusercontent.com/71047903/102826752-4cb1f180-43af-11eb-92bd-ed15abd68539.PNG)
 
 ### activity_detalles:
 ![detalles](https://user-images.githubusercontent.com/71047903/102826167-20e23c00-43ae-11eb-9ad0-4b76f4ebe9e7.PNG)
