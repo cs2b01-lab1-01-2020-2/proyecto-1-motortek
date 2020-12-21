@@ -50,6 +50,9 @@ class Servicio(db.Model):
     fecha_entrega = db.Column(db.String(), nullable=False)
     mecanico = db.Column(db.Integer, ForeignKey("mecanico.dni"), nullable=False)
     numplaca = db.Column(db.Integer, ForeignKey("auto.numplaca"), nullable=False)
+    completed = db.Column(db.String(2), nullable=True, default="f")
+    def __repr__(self):
+        return f'Servicio {self.id}: {self.descripcion}Placa: {self.numplaca}, Costo: {self.costo} Ingreso: {self.fecha_ingreso}, Entrega: {self.fecha_entrega}'
 
 class Mecanico(db.Model):
     __tablename__='mecanico'
@@ -155,6 +158,9 @@ def proceso_login():
         else:
             return redirect(url_for('login'))
     
+@app.route('/admin', methods=['GET'])
+def ref_admin():
+    return render_template('admin.html')
 
 @app.route('/admin', methods=['POST'])
 def proceso_login_admin():
@@ -167,7 +173,10 @@ def proceso_login_admin():
         return redirect(url_for('login_admin'))
     else:
         if(usuario.password == password):
-            return render_template("admin.html")
+            all_servicios = Servicio.query.all()
+            all_autos = Auto.query.all()
+            all_mecanicos = Mecanico.query.all() 
+            return render_template("admin.html", servicios=all_servicios, autos=all_autos, mecanicos=all_mecanicos)
         else:
             return redirect(url_for('login_admin'))
 
@@ -181,67 +190,66 @@ def registro_mecanico():
 def registro_servicio():
     return render_template("register_servicio.html")
 
-@app.route('/register_auto', methods=['GET'])
+@app.route('/register_auto', methods=['POST'])
 def register_auto():
     
     try:
-        placa = request.args.get("placa")
-        modelo = request.args.get("modelo")
-        correo = request.args.get("correo")
+        placa = request.get_json()['placa']
+        modelo = request.get_json()['modelo']
+        correo = request.get_json()['correo']
         placa = int(placa)
-        error=False
         a = Auto(email_usuario=correo, numplaca=placa, modelo=modelo)
         db.session.add(a)
         db.session.commit()
-    except:
+        return jsonify({'auto':a.numplaca})
+    except Exception as e:
         db.session.rollback()
-        error = True
+
     finally:
-        return render_template("admin.html", error=error)
+        db.session.close()
     
 
-@app.route('/register_servicio', methods=['GET'])
+@app.route('/register_servicio', methods=['POST'])
 def register_servicio():
     
     try:
-        tipo = request.args.get("servicio")
-        costo = request.args.get("costo")
-        descripcion = request.args.get("descripcion")
-        fecha_in= request.args.get("fecha_i")
-        fecha_out=request.args.get("fecha_e")
-        dni=request.args.get("dni")
-        placa=request.args.get("placa")
+        tipo = request.get_json()["servicio"]
+        costo = request.get_json()["costo"]
+        descripcion = request.get_json()["descripcion"]
+        fecha_in= request.get_json()["fecha_i"]
+        fecha_out=request.get_json()["fecha_e"]
+        dni=request.get_json()["dni"]
+        placa=request.get_json()["placa"]
         costo=int(costo)
         dni= int(dni)
         placa = int(placa)
-        error=False
         s = Servicio(tipo=tipo, costo=costo, descripcion=descripcion, fecha_ingreso=fecha_in, fecha_entrega=fecha_out, numplaca=placa, mecanico=dni)
         db.session.add(s)
         db.session.commit()
-    except:
+        return jsonify({'tipo':s.tipo})
+    except Exception as e:
         db.session.rollback()
-        error = True
     finally:
-        return render_template("admin.html", error=error)
+        db.session.close()
     
 
-@app.route('/register_mecanico', methods=['GET'])
+@app.route('/register_mecanico', methods=['POST'])
 def register_mecanico():
+    print("mecanico")
     try:
-        dni = request.args.get("dni")
-        nombre = request.args.get("nombre")
-        apellido = request.args.get("apellido")
-        sexo = request.args.get("sexo")
-        telefono = request.args.get("contacto")
-        error=False
+        dni = request.get_json()['dni']
+        nombre = request.get_json()['nombre']
+        apellido = request.get_json()['apellido']
+        sexo = request.get_json()['sexo']
+        telefono = request.get_json()['contacto']
         m = Mecanico(dni=dni, nombre=nombre, apellido=apellido, sexo=sexo, contacto=telefono)
         db.session.add(m)
         db.session.commit()
-    except:
+        return jsonify({'mecanico': m.nombre})
+    except Exception as e:
         db.session.rollback()
-        error = True
     finally:
-        return render_template("admin.html", error=error)
+        db.session.close()
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)

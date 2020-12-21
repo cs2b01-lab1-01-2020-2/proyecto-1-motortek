@@ -25,6 +25,22 @@
           margin: auto;  
           background-color: #c4917a80;
         }
+        .hidden {
+                display: None;
+            }
+        .view{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: medium;
+            color: #000;
+            background-color: #a8d68280;
+        }
+        .viewerror{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: medium;
+            color: #000;
+            background-color: #db3b3b80;
+        }
+
       </style>
   </head>
   <header>
@@ -32,6 +48,7 @@
     <img id="logo" src="{{url_for('static', filename='images/Motortek_logo_1.png')}}" width="350" style="background-color: #ffffff3d; margin: 10px;"><br>
     <nav>
       <ul>
+        <li><a href="/admin">Dashboard</a></li>
         <li><a href="/registro_auto">Registrar Autos</a></li>
         <li><a href="/registro_mecanico">Registrar Mecanico</a></li>
         <li><a href="/registro_servicio">Registrar Servicios</a></li>
@@ -51,14 +68,14 @@
     <h1 style="-webkit-text-fill-color: WHITE; text-shadow: -2px -2px 1px #000; ">Registrar autos</h1><br>
     <div style="text-align: center;" cellpadding="2px" cellspacing="5px">
         <table style="margin-left: 50px;">
-            <form action="/register_auto" method="GET" name="register_auto">
+            <form id="register_auto">
                 <table >
                     <tr>
                         <th>
                             <label>Ingrese el numero de placa del auto:</label>
                         </th>
                         <td>
-                            <input type="text" placeholder="Placa del auto" name="placa"><br>
+                            <input type="text" placeholder="Placa del auto" id="placa"><br>
                         </td>
                     </tr>
                     <tr>
@@ -69,7 +86,7 @@
                             <label>Ingrese el modelo del auto:</label>
                         </th>
                         <td>
-                            <input type="text" placeholder="Modelo del auto" name="modelo"><br>
+                            <input type="text" placeholder="Modelo del auto" id="modelo"><br>
                         </td>
                     </tr>
                     <tr>
@@ -80,7 +97,7 @@
                             <label>Ingrese el correo electronico del cliente:</label>
                         </th>
                         <td>
-                            <input type="email" placeholder="Correo electronico del cliente" name="correo"><br>
+                            <input type="email" placeholder="Correo electronico del cliente" id="correo"><br>
                         </td>
                     </tr>
                     <tr>
@@ -100,9 +117,34 @@
                     </tr>                  
                 </table>
     </form><br>
-    {%if error%}
-    <label style="color:red;">Ocurrio un error, vuelve a intentarlo</label>
-    {%endif%}
+    <div id ="error" class="hidden">Ocurrió un error!!</div>
+    <div id ="todook" class="hidden">Auto agregado correctamente</div>
     
 </body>
 </html>
+<script>
+    document.getElementById('register_auto').onsubmit = function(e){
+        e.preventDefault();
+
+        fetch('/register_auto',{
+            method: 'POST',
+            body: JSON.stringify({
+                'placa': document.getElementById('placa').value,
+                'modelo': document.getElementById('modelo').value,
+                'correo': document.getElementById('correo').value,
+            }),
+            headers:{
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(function(response){
+            document.getElementById('error').className = 'hidden';
+            document.getElementById('todook').className = 'view';
+            return response.json();
+            })
+        .catch(function(error){
+            document.getElementById('todook').className = 'hidden';
+            document.getElementById('error').className = 'viewerror';
+            });
+    }
+</script>

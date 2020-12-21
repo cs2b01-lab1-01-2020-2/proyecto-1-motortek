@@ -121,30 +121,7 @@ def proceso_register():
         error=True
         return render_template('register.html', error=error)         
 ```
-### Error en Registro de Administradores:
-Se produce el mensaje de error cuando se intenta registrar un administrador que ya está registrado en el sistema.
-Código:
 
-```python 
-@app.route('/proceso_register_admin', methods=['GET'])
-def proceso_register_admin():
-    try:
-        nombre = request.args.get("nombre")
-        apellido = request.args.get("apellido")
-        sexo = request.args.get("sexo")
-        contacto = request.args.get("contacto")
-        correo = request.args.get("email")
-        password = request.args.get("password")
-        error=False
-        u = Usuario_administrador(nombre=nombre, apellido= apellido, sexo=sexo, contacto=contacto, email=correo, password=password)
-        db.session.add(u)
-        db.session.commit()
-        return redirect(url_for('login_admin'))
-    except:
-        db.session.rollback()
-        error = True
-        return render_template('register_admin.html', error=error)         
-```
 ### Error en Registro de Información de Autos:
 Se produce cuando el administrador provoca un error dentro de la base de datos al intentar ingresar los datos de un Auto.
 Código:

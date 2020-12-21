@@ -25,6 +25,21 @@
           margin: auto;  
           background-color: #c4917a80;
         }
+        .hidden {
+                display: None;
+            }
+        .view{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: medium;
+            color: #000;
+            background-color: #a8d68280;
+        }
+        .viewerror{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: medium;
+            color: #000;
+            background-color: #db3b3b80;
+        }
       </style>
   </head>
   <header>
@@ -32,6 +47,7 @@
     <img id="logo" src="{{url_for('static', filename='images/Motortek_logo_1.png')}}" width="350" style="background-color: #ffffff3d; margin: 10px;"><br>
     <nav>
       <ul>
+        <li><a href="/admin">Dashboard</a></li>
         <li><a href="/registro_auto">Registrar Autos</a></li>
         <li><a href="/registro_mecanico">Registrar Mecanico</a></li>
         <li><a href="/registro_servicio">Registrar Servicios</a></li>
@@ -52,14 +68,14 @@
     <h1 style="-webkit-text-fill-color: WHITE; text-shadow: -2px -2px 1px #000; ">Registrar Mecanicos</h1><br>
     <div style="text-align: center;" cellpadding="2px" cellspacing="5px">
         <table style="margin-left: 50px;">
-            <form action="/register_mecanico" method="get" name="">
+            <form id="register_mecanico">
                 <table >
                     <tr>
                         <th>
                             <label>Ingrese el dni del mecanico:</label>
                         </th>
                         <td>
-                            <input type="number" placeholder="Dni del mecanico" name="dni"><br>
+                            <input type="number" placeholder="Dni del mecanico" id="dni"><br>
                         </td>
                     </tr>
                     <tr>
@@ -70,7 +86,7 @@
                             <label>Ingrese el nombre del mecanico:</label>
                         </th>
                         <td>
-                            <input type="text" placeholder="Nombre del mecanico" name="nombre"><br>
+                            <input type="text" placeholder="Nombre del mecanico" id="nombre"><br>
                         </td>
                     </tr>
                     <tr>
@@ -81,7 +97,7 @@
                             <label>Ingrese el apellido del mecanico:</label>
                         </th>
                         <td>
-                            <input type="text" placeholder="Apellido del mecanico" name="apellido"><br>
+                            <input type="text" placeholder="Apellido del mecanico" id="apellido"><br>
                         </td>
                     </tr>
                     <tr>
@@ -92,9 +108,8 @@
                             <label>Ingrese el sexo del mecanico:</label>
                         </th>
                         <td>
-                            <input id ="sexo" type="radio" value="masculino" name="sexo"><label>Masculino</label>
-                            <input id ="sexo" type="radio" value="femenino" name="sexo"><label>Femenino</label>
-                            <input id ="sexo" type="radio" value="no precisa" name="sexo"><label>No preciso</label>
+                            <input id ="sexo" type="text"  name="sexo"><label>/label>
+                            
                         </td>
                     </tr>
                     <tr>
@@ -105,7 +120,7 @@
                             <label>Ingrese el telefono celular del mecanico:</label>
                         </th>
                         <td>
-                            <input type="number" placeholder="Telefono celular del mecanico" name="contacto"><br>
+                            <input type="number" placeholder="Telefono celular del mecanico" id="contacto"><br>
                         </td>
                     </tr>
                     <tr>
@@ -116,7 +131,7 @@
                             <label>Ingrese una foto del mecanico:</label>
                         </th>
                         <td>
-                            <input type="file" placeholder="Imagen del mecanico" name="imagen"><br>
+                            <input type="file" placeholder="Imagen del mecanico" id="imagen"><br>
                         </td>
                     </tr>
                     <tr>
@@ -124,12 +139,36 @@
                         <td><input class="btn btn-success" type="submit" id="submit" value="Registrar"></td>
                     </tr>
                 </table>
-            
-            </form><br>
-    
-    {%if error%}
-    <label style="color:red;">Ocurrio un error, vuelve a intentarlo</label>
-    {%endif%}
+    </form><br>
+    <div id ="error" class="hidden">Ocurrió un error!!</div>
+    <div id ="todook" class="hidden">Mecanico agregado correctamente</div>
     
 </body>
 </html>
+<script>
+    document.getElementById('register_mecanico').onsubmit = function(e){
+        e.preventDefault();
+        fetch('/register_mecanico',{
+            method: 'POST',
+            body: JSON.stringify({
+                'dni': document.getElementById('dni').value,
+                'nombre': document.getElementById('nombre').value,
+                'apellido': document.getElementById('apellido').value,
+                'sexo': document.getElementById('sexo').value,
+                'contacto': document.getElementById('contacto').value
+            }),
+            headers:{
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(function(response){
+            document.getElementById('error').className = 'hidden';
+            document.getElementById('todook').className = 'view';
+            return response.json();
+            })
+        .catch(function(error){
+            document.getElementById('todook').className = 'hidden';
+            document.getElementById('error').className = 'viewerror';
+            });
+    }
+</script>

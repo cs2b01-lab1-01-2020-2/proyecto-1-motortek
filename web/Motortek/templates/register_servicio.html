@@ -25,7 +25,21 @@
             margin: auto;  
             background-color: #c4917a80;
             }
-        
+            .hidden {
+                display: None;
+            }
+        .view{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: medium;
+            color: #000;
+            background-color: #a8d68280;
+        }
+        .viewerror{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: medium;
+            color: #000;
+            background-color: #db3b3b80;
+        }
       </style>
   </head>
   <header>
@@ -33,6 +47,7 @@
     <img id="logo" src="{{url_for('static', filename='images/Motortek_logo_1.png')}}" width="350" style="background-color: #ffffff3d; margin: 10px;"><br>
     <nav>
       <ul>
+        <li><a href="/admin">Dashboard</a></li>
         <li><a href="/registro_auto">Registrar Autos</a></li>
         <li><a href="/registro_mecanico">Registrar Mecanico</a></li>
         <li><a href="/registro_servicio">Registrar Servicios</a></li>
@@ -54,14 +69,14 @@
 
     <div style="text-align: center; " cellpadding="2px" cellspacing="5px" >
         <table style="align-content: center;">
-            <form action="/register_servicio" method="GET" name="">
+            <form id="register_servicio">
                 <table >
                     <tr>
                         <th>
                             <label>Ingrese el tipo de servicio:</label>
                         </th>
                         <td>
-                            <input type="text" placeholder="Tipo de servicio" name="servicio"><br>
+                            <input type="text" placeholder="Tipo de servicio" id="servicio"><br>
                         </td>
                     </tr>
                     <tr>
@@ -72,7 +87,7 @@
                             <label>Ingrese el costo del servicio:</label>
                         </th>
                         <td>
-                            <input type="number" placeholder="Costo del servicio" name="costo"><br>
+                            <input type="number" placeholder="Costo del servicio" id="costo"><br>
                         </td>
                     </tr>
                     <tr>
@@ -83,7 +98,7 @@
                             <label>Ingrese la descripcion del servicio:</label>
                         </th>
                         <td>
-                            <input type="text" placeholder="Descripcion de servicio" name="descripcion"><br>
+                            <input type="text" placeholder="Descripcion de servicio" id="descripcion"><br>
                         </td>
                     </tr>
                     <tr>
@@ -94,7 +109,7 @@
                             <label>Ingrese la fecha de ingreso:</label>
                         </th>
                         <td>
-                            <input type="datetime" placeholder="Fecha de ingreso" name="fecha_i"><br>
+                            <input type="datetime" placeholder="Fecha de ingreso" id="fecha_i"><br>
                         </td>
                     </tr>
                     <tr>
@@ -105,7 +120,7 @@
                             <label>Ingrese la fecha de entrega:</label>
                         </th>
                         <td>
-                            <input type="datetime" placeholder="Fecha de entrega" name="fecha_e"><br>
+                            <input type="datetime" placeholder="Fecha de entrega" id="fecha_e"><br>
                         </td>
                     </tr>
                     <tr>
@@ -116,7 +131,7 @@
                             <label>Ingrese el numero de dni del mecanico:</label>
                         </th>
                         <td>
-                            <input type="number" placeholder="Dni del mecanico" name="dni"><br>
+                            <input type="number" placeholder="Dni del mecanico" id="dni"><br>
                         </td>
                     </tr>
                     <tr>
@@ -127,7 +142,7 @@
                             <label>Ingrese el numero de placa del auto:</label>
                         </th>
                         <td>
-                            <input type="text" placeholder="Placa del auto" name="placa"><br>
+                            <input type="text" placeholder="Placa del auto" id="placa"><br>
                         </td>
                     </tr>
                     <tr>
@@ -136,11 +151,38 @@
                     </tr>
                                         
                 </table>
-                
     </form><br>
-    {%if error%}
-    <label style="color:red;">Ocurrio un error, vuelve a intentarlo</label>
-    {%endif%}
-    
+    <div id ="error" class="hidden">Ocurrió un error!!</div>
+    <div id ="todook" class="hidden">Servicio agregado correctamente</div>
 </body>
 </html>
+<script>
+    document.getElementById('register_servicio').onsubmit = function(e){
+        e.preventDefault();
+
+        fetch('/register_servicio',{
+            method: 'POST',
+            body: JSON.stringify({
+                'servicio': document.getElementById('servicio').value,
+                'costo': document.getElementById('costo').value,
+                'descripcion': document.getElementById('descripcion').value,
+                'fecha_i': document.getElementById('fecha_i').value,
+                'fecha_e': document.getElementById('fecha_e').value,
+                'placa': document.getElementById('placa').value,
+                'dni': document.getElementById('dni').value
+            }),
+            headers:{
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(function(response){
+            document.getElementById('error').className = 'hidden';
+            document.getElementById('todook').className = 'view';
+            return response.json();
+            })
+        .catch(function(error){
+            document.getElementById('todook').className = 'hidden';
+            document.getElementById('error').className = 'viewerror';
+            });
+    }
+</script>
