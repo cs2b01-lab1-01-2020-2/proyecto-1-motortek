@@ -62,7 +62,9 @@
           </th>
           <td style="padding: 10px;">
             {% for s in servicios %}
-            <label >{{s}}</label><br> 
+            <label >Servicio: {{s.id}}, Placa: {{s.numplaca}}</label><br>
+            <label >Descripcion: {{s.descripcion}}, Costo: {{s.costo}}</label><br> 
+            <label >Ingreso {{s.fecha_ingreso}}, Entrega: {{s.fecha_entrega}}</label><br>  
             {% endfor %}
           </td>
       </tr>
