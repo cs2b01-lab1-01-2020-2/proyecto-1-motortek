@@ -1,0 +1,60 @@
+body{
+  background-size: cover;
+}
+
+.logo{
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+header {
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+}
+* {
+  padding: 0;
+  margin: 0;
+}
+p {
+  margin-bottom: 10px;
+  }
+  nav {
+    height: 60px;
+    background-color: bisque;
+  }
+  
+  nav ul {
+    list-style: none;
+  
+    overflow: hidden; /* Limpiamos errores de float */
+  }
+  
+  nav ul li {
+    float: left;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+  }
+  
+  nav ul li a {
+    display: block; /* Convertimos los elementos a en elementos bloque para manipular el padding */
+    padding: 20px;
+    color: #2E4FB6;
+    text-decoration: none;
+  }
+  
+  nav ul li:hover {
+    background: cornflowerblue
+    }
+  .contenido {
+    padding-top: 380px;
+  }
+  .wrapper {
+    width: 80%;
+    margin: auto;
+    overflow:hidden;
+  }
+.title{
+  color: brown;
+}
+

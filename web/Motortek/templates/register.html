@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Cliente MotorTek</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel=StyleSheet href="{{ url_for('static',filename='styles/css.css') }}" type="text/css" media=screen>
+    <style>
+        input:placeholder-shown {
+            border-color: teal;
+            color: purple;
+            font-style: italic;
+            text-align: center;
+            }
+        label{
+            -webkit-text-fill-color: black;
+            -webkit-text-stroke: 0.2px red;
+        }
+
+    </style>
+  </head>
+  <header>
+    <img id="logo" src="{{url_for('static', filename='images/Motortek_logo_1.png')}}" width="350" style="background-color: #ffffff3d; margin: 10px;"><br>
+    <nav>
+      <ul>
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/login">Cliente</a></li>
+        <li><a href="/login_admin">Admin</a></li>
+        <li><a href="/register">Registrate</a></li>
+        <li><a href="#">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+  <body background="{{url_for('static', filename='images/garage-background.jpg')}}" style="text-align: center;">
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h1 style="-webkit-text-fill-color: WHITE; text-shadow: -2px -2px 1px #000; ">Registre sus Datos</h1><br>
+    <form action="/proceso_register" method="get" name="">
+        <div style="text-align: center;" cellpadding="2px" cellspacing="5px">
+            <table style="margin: 0 auto;">
+                <tr>
+                    <th>
+                        <label>Ingrese su nombre:</label>
+                    </th>
+                    <td><input type="text" placeholder="Nombre" name="nombre"></td>
+                </tr>
+                <tr>
+                    <th>&nbsp;</th>
+                </tr>
+                <tr>
+                    <th>
+                        <label>Ingrese su apellido:</label>
+                    </th>
+                    <td>
+                        <input type="text" placeholder="Apellidos" name="apellido"><br>
+                    </td>
+                </tr>
+                <tr>
+                    <th>&nbsp;</th>
+                </tr>
+                <tr>
+                    <th>
+                        <label>Ingrese su sexo:</label>
+                    </th>
+                    <td>
+                        <input id ="sexo" type="radio" value="masculino" name="sexo"><label>Masculino</label>
+                        <input id ="sexo" type="radio" value="femenino" name="sexo"><label>Femenino</label>
+                        <input id ="sexo" type="radio" value="no precisa" name="sexo"><label>No preciso</label>
+                    </td>
+                </tr>
+                <tr>
+                    <th>&nbsp;</th>
+                </tr>
+                <tr>
+                    <th>
+                        <label>Ingrese su telefono celular:</label>:</label>
+        
+                    </th>
+                    <td>
+                        <input type="number" placeholder="Telefono Celular" name="contacto"><br>
+                    </td>
+                </tr>
+                <tr>
+                    <th>&nbsp;</th>
+                </tr>
+                <tr>
+                    <th>
+                        <label>Ingrese su correo electronico:</label>
+        
+                    </th>
+                    <td>
+                        <input type="email" placeholder="Correo electronico" name="email"><br>
+                    </td>
+                </tr>
+                <tr>
+                    <th>&nbsp;</th>
+                </tr>
+                <tr>
+                    <th>
+                        <label>Ingrese su contraseña:</label>
+        
+                    </th>
+                    <td>
+                        <input type="password" placeholder="Contraseña" name="password"><br>
+                    </td>
+                </tr>
+                <tr>
+                    <th>&nbsp;</th>
+                </tr>
+            </table>
+            <input class="btn btn-success" type="submit" id="submit" value="Registrar datos">
+        </div>
+
+    </form>
+    <br>
+        {%if error%}
+        <label style="color:red;">Ocurrio un error, vuelve a intentarlo</label>
+        {%endif%}
+</body>
+<body>

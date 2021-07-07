@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Detalles">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/detalle"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:background="@color/black"
+                android:layout_gravity="center_horizontal"
+                android:textAlignment="center"
+                android:textSize="40dp"
+                android:padding="23dp"
+                android:layout_marginBottom="20dp"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginBottom="40dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:text="@string/servicio"
+                    android:textColor="@color/white"
+                    android:background="@color/black"
+                    android:padding="20dp"
+                    android:textSize="24sp" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:textColor="@color/black"
+                    android:textSize="24sp"
+                    android:padding="20dp"
+                    android:text="@string/planchado_y_pintura"
+                    android:background="@color/white"/>
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="2dp"
+                    android:visibility="visible"
+                    android:background="@android:color/darker_gray"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:textColor="@color/black"
+                    android:textSize="24sp"
+                    android:padding="20dp"
+                    android:text="01/12/20"
+                    android:background="@color/white"/>
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="2dp"
+                    android:visibility="visible"
+                    android:background="@android:color/darker_gray"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:textColor="@color/black"
+                    android:textSize="24sp"
+                    android:padding="20dp"
+                    android:text="Completado en 1 semana"
+                    android:background="@color/white"/>
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="2dp"
+                    android:visibility="visible"
+                    android:background="@android:color/darker_gray"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:textColor="@color/black"
+                    android:textSize="24sp"
+                    android:padding="20dp"
+                    android:text="Costo: 200 S/."
+                    android:background="@color/white"/>
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="2dp"
+                    android:visibility="visible"
+                    android:background="@android:color/darker_gray"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:textColor="@color/black"
+                    android:textSize="24sp"
+                    android:padding="20dp"
+                    android:text="Metodo de pago: Efectivo"
+                    android:background="@color/white"/>
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="2dp"
+                    android:visibility="visible"
+                    android:background="@android:color/darker_gray"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="24sp"
+                    android:padding="20dp"
+                    android:text="Descripción:\n\nSe realizo un planchado simple y se aplico pintura al planchado para que tenga un acabado perfecto."
+                    android:background="@color/white"/>
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="2dp"
+                    android:visibility="visible"
+                    android:background="@android:color/darker_gray"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="24sp"
+                    android:padding="20dp"
+                    android:text="Atendido por: Victor Ramirez"
+                    android:background="@color/white"/>
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="2dp"
+                    android:visibility="visible"
+                    android:background="@android:color/darker_gray"/>
+
+            </LinearLayout>
+            <Button
+                android:id="@+id/atras"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:text="@string/volver"
+                android:textAppearance="?android:textAppearanceMedium"
+                android:onClick="back"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="34sp"
+                android:backgroundTint="@color/black"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="100dp"
+                android:layout_gravity="center_horizontal"
+                android:foregroundGravity="bottom"/>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

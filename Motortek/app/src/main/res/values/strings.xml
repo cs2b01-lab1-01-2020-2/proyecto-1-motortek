@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Motortek</string>
+    <string name="log_in">Log in</string>
+    <string name="register">Register</string>
+    <string name="volver">Volver</string>
+    <string name="registrarse">Registrarse</string>
+    <string name="correo_electronico">Correo electronico</string>
+    <string name="contrase_a">Contraseña</string>
+    <string name="mantenimiento_general">Mantenimiento general.</string>
+    <string name="servicio">Servicio</string>
+    <string name="planchado_y_pintura">Planchado y pintura.</string>
+    <string name="servicios">Servicios</string>
+    <string name="reparaci_n_de_motor">Reparación de motor.</string>
+    <string name="ver_detalles">Ver detalles</string>
+    <string name="detalle">Detalle</string>
+    <string name="agregar_auto">Agregar Auto</string>
+    <string name="correo_electronico_de_cliente">Correo electronico de cliente</string>
+    <string name="modelo_de_auto">Modelo de Auto</string>
+    <string name="placa_de_auto">Placa de Auto</string>
+    <string name="agregar_servicio">Agregar Servicio</string>
+    <string name="insertar_autos">Insertar autos</string>
+    <string name="insertar_servicios">Insertar servicios</string>
+</resources>
